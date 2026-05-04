@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>THE SPINELLI REPORT | EUROPEAN POPULAR FRONT</title>
+    <meta name="description" content="The Spinelli Report - Pan-European leftist news and analysis from the European Popular Front." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <p class="logo-text">EPF // EURO-POP</p>
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="news.html" class="active">The Spinelli Report</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <span class="section-label">LATEST_NEWS</span>
+        <div class="red-line thin"></div>
+        <h1>INFORMING THE<br>EUROPEAN LEFT<br><span style="color: var(--epf-red)">FOR REAL CHANGE.</span></h1>
+        <p style="margin-top: 1.5rem; font-size: 1rem; font-weight: 700; max-width: 60ch;">The Spinelli Report will become EPF's central platform for article uploads, analysis, and dispatches from the European left. At the moment, the first reports are still being prepared.</p>
+    </header>
+
+    <main>
+        <div class="news-container">
+            <div class="news-grid" id="news-grid">
+                <article class="news-item" id="no-articles-placeholder">
+                    <span class="news-date">COMING SOON</span>
+                    <h3>NO ARTICLES HAVE BEEN PUBLISHED YET</h3>
+                    <p>When the first Spinelli Report pieces are ready, they will appear here. Editors can manage articles through the UI at <a href="/admin/editor.html">/admin/editor.html</a>. Are you a journalist, analyst, or activist with expertise in European politics? We welcome contributions from across the left spectrum. Contact us if you'd like to write for The Spinelli Report.</p>
+                    <a href="https://discord.gg/CsM9Y9SPD7" style="color: var(--epf-red); font-weight: 800;">JOIN THE DISCORD →</a>
+                </article>
+            </div>
+        </div>
+
+        <section class="card">
+            <h2>CONTRIBUTE</h2>
+            <div class="red-line thin"></div>
+            <br>
+            <a href="mailto:contact@epf-europe.org" style="font-weight: 800; color: var(--epf-red); text-decoration: none; text-transform: uppercase; border-bottom: 3px solid var(--epf-red);">CONTACT US →</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="red-line thick"></div>
+        <p class="footer-bold">A BROAD TENT. A CLEAR DIRECTION. A EUROPE WORTH BUILDING.</p>
+        <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.6; line-height: 1.6; max-width: 60ch;">
+            EPF IS A SMALL ONLINE COMMUNITY WITH A CENTRAL COMMAND STRUCTURE. WE FOCUS ON LEFT-PAN-EUROPEANISM AS A THINK TANK, ASPIRING TO REAL-WORLD IMPACT.
+        </p>
+    </footer>
+
+    <script>
+        const contentPath = '/content/articles.json';
+        const newsGrid = document.getElementById('news-grid');
+        const placeholder = document.getElementById('no-articles-placeholder');
+
+        function formatDate(date) {
+            if (!date) return 'DRAFT';
+            return new Date(date).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
+        }
+
+        async function fetchArticles() {
+            try {
+                const response = await fetch(contentPath);
+                if (!response.ok) throw new Error('Unable to load articles');
+                const data = await response.json();
+                return Array.isArray(data.articles) ? data.articles : [];
+            } catch (error) {
+                console.error(error);
+                return [];
+            }
+        }
+
+        async function renderArticles() {
+            const articles = await fetchArticles();
+            if (!articles.length) {
+                placeholder.style.display = 'block';
+                return;
+            }
+            placeholder.style.display = 'none';
+            newsGrid.innerHTML = articles.map(article => `
+                <article class="news-item">
+                    <span class="news-date">${formatDate(article.date)}</span>
+                    <h3>${article.title}</h3>
+                    <p>${article.excerpt}</p>
+                    ${article.url ? `<a href="${article.url}" target="_blank" style="color: var(--epf-red); font-weight: 800;">READ ARTICLE →</a>` : ''}
+                </article>
+            `).join('');
+        }
+
+        renderArticles();
+    </script>
+</body>
+</html>

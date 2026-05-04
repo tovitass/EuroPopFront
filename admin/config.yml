@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: YOUR_USERNAME/YOUR_REPO
+  branch: main
+
+publish_mode: editorial_workflow
+site_url: "https://YOUR_DOMAIN"
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "spinelli"
+    label: "Spinelli Report"
+    files:
+      - label: "Articles"
+        name: "articles"
+        file: "content/articles.json"
+        fields:
+          - {name: "title", label: "Page title", widget: "string", default: "The Spinelli Report"}
+          - {name: "articles", label: "Articles", widget: "list", field:
+              - {name: "title", label: "Title", widget: "string"}
+              - {name: "date", label: "Date", widget: "datetime"}
+              - {name: "excerpt", label: "Excerpt", widget: "text"}
+              - {name: "url", label: "Article URL", widget: "string", required: false}
+            }
