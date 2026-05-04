@@ -36,7 +36,7 @@
                 <article class="news-item" id="no-articles-placeholder">
                     <span class="news-date">COMING SOON</span>
                     <h3>NO ARTICLES HAVE BEEN PUBLISHED YET</h3>
-                    <p>When the first Spinelli Report pieces are ready, they will appear here. Editors can manage articles through the UI at <a href="/admin/editor.html">/admin/editor.html</a>. Are you a journalist, analyst, or activist with expertise in European politics? We welcome contributions from across the left spectrum. Contact us if you'd like to write for The Spinelli Report.</p>
+                    <p>When the first Spinelli Report pieces are ready, they will appear here. Are you a journalist, analyst, or activist with expertise in European politics? We welcome contributions from across the left spectrum. Contact us if you'd like to write for The Spinelli Report.</p>
                     <a href="https://discord.gg/CsM9Y9SPD7" style="color: var(--epf-red); font-weight: 800;">JOIN THE DISCORD →</a>
                 </article>
             </div>
@@ -59,45 +59,7 @@
     </footer>
 
     <script>
-        const contentPath = '/content/articles.json';
-        const newsGrid = document.getElementById('news-grid');
-        const placeholder = document.getElementById('no-articles-placeholder');
-
-        function formatDate(date) {
-            if (!date) return 'DRAFT';
-            return new Date(date).toLocaleDateString('en-GB', { day: '2-digit', month: '2-digit', year: 'numeric' });
-        }
-
-        async function fetchArticles() {
-            try {
-                const response = await fetch(contentPath);
-                if (!response.ok) throw new Error('Unable to load articles');
-                const data = await response.json();
-                return Array.isArray(data.articles) ? data.articles : [];
-            } catch (error) {
-                console.error(error);
-                return [];
-            }
-        }
-
-        async function renderArticles() {
-            const articles = await fetchArticles();
-            if (!articles.length) {
-                placeholder.style.display = 'block';
-                return;
-            }
-            placeholder.style.display = 'none';
-            newsGrid.innerHTML = articles.map(article => `
-                <article class="news-item">
-                    <span class="news-date">${formatDate(article.date)}</span>
-                    <h3>${article.title}</h3>
-                    <p>${article.excerpt}</p>
-                    ${article.url ? `<a href="${article.url}" target="_blank" style="color: var(--epf-red); font-weight: 800;">READ ARTICLE →</a>` : ''}
-                </article>
-            `).join('');
-        }
-
-        renderArticles();
+        // No dynamic article loading - articles are static or added manually
     </script>
 </body>
 </html>
