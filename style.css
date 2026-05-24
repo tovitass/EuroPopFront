@@ -64,33 +64,13 @@ header {
     letter-spacing: -0.05em;
 }
 
-.header-nav-links {
-    display: flex;
-    gap: 2rem;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-}
-
-.header-nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.header-nav-links a:hover {
-    color: var(--primary-red);
-}
-
 .nav-logo {
     width: 45px;
     height: 45px;
     border: 3px solid white;
 }
 
-/* MAIN */
+/* MAIN CONTENT HOLDER */
 
 main {
     flex-grow: 1;
@@ -98,85 +78,32 @@ main {
 }
 
 .bento-container {
-    display: grid;
-
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-
-    gap: 2rem;
-
     height: 100%;
-
     padding: 2rem 3rem 3rem 3rem;
-}
-
-/* HERO */
-
-.hero-box {
-    grid-column: span 12;
-    grid-row: span 5;
-
     display: flex;
     align-items: center;
+}
 
-    padding: 2rem 4rem 5rem 4rem;
+/* HERO BOX */
 
-    margin-bottom: 2rem;
-
-    border-bottom: 8px solid #000;
+.hero-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 4rem;
+    background: white;
+    border: 8px solid #000;
+    box-shadow: 12px 12px 0px #000;
 }
 
 .headline {
     font-size: clamp(3rem, 5vw, 6rem);
-
     line-height: 0.9;
-
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .hero-pink {
     color: var(--primary-red);
-}
-
-/* BOXES */
-
-.bento-item {
-    background: white;
-
-    border: 8px solid #000;
-
-    box-shadow: 12px 12px 0px #000;
-
-    padding: 2rem;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    transition: transform 0.15s ease;
-}
-
-.cta-box {
-    grid-column: span 5;
-    grid-row: span 7;
-
-    background: var(--text-grey);
-    color: white;
-}
-
-.mission-box {
-    grid-column: span 4;
-    grid-row: span 4;
-}
-
-.who-box {
-    grid-column: span 3;
-    grid-row: span 4;
-}
-
-.social-box {
-    grid-column: span 7;
-    grid-row: span 3;
 }
 
 /* ELEMENTS */
@@ -187,107 +114,10 @@ main {
     letter-spacing: 0.3em;
     text-transform: uppercase;
     opacity: 0.5;
-
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.red-bar {
-    width: 70px;
-    height: 8px;
-    background: var(--primary-red);
-
-    margin-bottom: 1rem;
-}
-
-.headline {
-    font-size: clamp(3rem, 5vw, 6rem);
-
-    margin-bottom: 1rem;
-}
-
-.subtext {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.4;
-
-    max-width: 450px;
-}
-
-/* BUTTON */
-
-.sign-up-btn {
-    background: var(--primary-red);
-    color: white;
-
-    border: 6px solid white;
-
-    padding: 1rem;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: clamp(2rem, 4vw, 4rem);
-    font-weight: 900;
-
-    text-transform: uppercase;
-
-    cursor: pointer;
-
-    transition: 0.1s;
-}
-
-.sign-up-btn:active {
-    transform: translate(5px, 5px);
-}
-
-/* WELCOME */
-
-.welcome-list {
-    list-style: none;
-}
-
-.welcome-list li {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 800;
-    text-transform: uppercase;
-
-    border-left: 6px solid var(--primary-red);
-
-    padding-left: 12px;
-    margin-bottom: 10px;
-}
-
-/* SOCIALS */
-
-.social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.social-link {
-    color: var(--text-grey);
-
-    text-decoration: none;
-
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-
-    text-transform: uppercase;
-
-    border-bottom: 4px solid rgba(0,0,0,0.1);
-
-    padding-bottom: 6px;
-
-    transition: 0.2s;
-}
-
-.social-link:hover {
-    border-color: var(--primary-red);
-    padding-left: 10px;
-}
-
-/* MOBILE */
+/* RESPONSIVE DESIGN */
 
 @media (max-width: 900px) {
 
@@ -297,31 +127,23 @@ main {
     }
 
     .bento-container {
-        display: flex;
-        flex-direction: column;
+        padding: 2rem 1.5rem;
     }
 
     .hero-box {
-        min-height: 50vh;
-    }
-
-    .hero-text {
-        font-size: 5rem;
+        padding: 2rem;
+        min-height: 40vh;
     }
 
     .headline {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
-    .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
+    .header-main {
         gap: 1rem;
     }
 
-    .header-nav-links {
-        flex-wrap: wrap;
-        gap: 1rem;
+    .header-title {
+        font-size: 1.6rem;
     }
-
 }
