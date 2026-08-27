@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="welcomeTitle">Who is Welcome | {{orgShortName}} Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Iframe page reset. Apparently transparent backgrounds are a whole personality. */
+        html, body {
+            background: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        h2 {
+        color: var(--red);
+        font-family: 'Oswald', sans-serif;}
+
+        /* Big wrapper. It mostly exists so flexbox can either help or ruin my day. */
+        .subpage-board {
+            background: var(--board-bg);
+            padding: 40px;
+            box-sizing: border-box;
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        /* Main card. If this is too wide, blame math, not me. */
+        .manifesto-card {
+            width: 100%;
+            max-width: 1100px;
+            margin: 20px 0;
+            background-color: var(--card-bg);
+            color: var(--card-text);
+            border: var(--border) solid var(--line);
+            box-shadow: 10px 10px 0 var(--shadow-color);
+            padding: calc(var(--pad) * 2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .manifesto-divider {
+            border: none;
+            border-top: 3px solid var(--red);
+            margin: 1.5rem 0 2rem 0;
+        }
+
+        /* Text area. Very normal. Suspiciously normal, honestly. */
+        .manifesto-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--muted-text);
+            max-width: 980px;
+            margin-bottom: 2rem;
+        }
+
+        .manifesto-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Moving text conveyor belt. I do not fully trust it, but it moves. */
+        .marquee-container {
+            width: calc(100% + (calc(var(--pad) * 4)));
+            margin-left: calc(var(--pad) * -2);
+            background: #000;
+            border-top: 2px solid var(--red);
+            border-bottom: 2px solid var(--red);
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 15px 0;
+            margin-bottom: 3rem;
+            transform: rotate(-1deg);
+        }
+
+        .marquee-content {
+            display: inline-block;
+            animation: scroll 40s linear infinite;
+        }
+
+        .tendency-item {
+            display: inline-block;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem;
+            color: #fff;
+            padding: 0 30px;
+            text-transform: uppercase;
+        }
+
+        .tendency-item::after {
+            content: " • ";
+            color: var(--red);
+            margin-left: 30px;
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* Hover pauses the nonsense so humans can read the damn thing. */
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
+        }
+
+        .highlight-box {
+            background: var(--red);
+            color: rgb(255, 255, 255);
+            padding: 2px 6px;
+            font-weight: 900;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="subpage-board">
+
+        <article class="manifesto-card">
+            <h2 data-i18n="welcomeTitle">WHO IS WELCOME</h2>
+
+            <hr class="manifesto-divider">
+
+            <div class="manifesto-text">
+                <p data-i18n-html="welcomeP1">
+                    {{orgFullName}} rejects sectarian gatekeeping. Capital and reaction operate smoothly across borders without checking ideological nuances; our resistance must be equally vast and interconnected. We provide a strategic harbor for <span class="highlight-box">all left-wingers</span> who share a core baseline of <span class="highlight-box">Pan-Europeanism.</span>
+                </p>
+            </div>
+
+            <!-- The ticker lives here and spins ideological labels like a tiny CSS washing machine. -->
+            <div class="marquee-container">
+                <div class="marquee-content" data-i18n-repeat="2" data-i18n-repeat-tag="span" data-i18n-repeat-class="tendency-item"></div>
+            </div>
+
+            <div class="manifesto-text">
+                <p data-i18n-html="welcomeP2">
+                    <strong>We do not demand uniformity of thought; we demand comradely, constructive engagement in good faith. Our differences are the critical source materials for a resilient, creative political imagination. If your vision for Europe is defined by human dignity, social justice, and the relentless defense of collective freedom against corporate greed;<span class="highlight-box">you belong here.</span></strong>
+                </p>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: auto;">
+                <a href="home-grid.html" target="_self" class="paper-btn" data-i18n="returnTerminal">
+                    ← RETURN TO TERMINAL
+                </a>
+            </div>
+
+        </article>
+
+    </div>
+
+    <script src="translations.js"></script>
+</body>
+</html>

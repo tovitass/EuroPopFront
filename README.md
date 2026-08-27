@@ -1,21 +1,176 @@
-# About us: 
+# EuroPopFront
 
-The European Popular Front (EPF) brings together a left-wing community and think-tank environment dedicated to strengthening European integration through a leftist lens. We encourage serious political discussion, strategic thinking, and creative debate grounded in a shared vision of a more united Europe.
+## WHAT IS THIS?
 
-EPF is open to all who engage in good faith but it is not ideologically neutral. It is explicitly anti-fascist, anti-exclusionary, and rooted in left-wing Eurofederalism as a serious political project.
+This repository contains the official landing page for the European Popular Front (EPF).
 
-Right now, we're only doing things online but we strive to do great things in the future
+The EPF is an online political community focused on:
 
-# Socials
+* Leftist politics
+* Pan-Europeanism
+* Eurofederalism
+* Anti-fascism
+* Transnational organising
 
-Twitter: https://x.com/EuroPopFront
-subreddit: https://www.reddit.com/r/EuroPopFront/
-Insta: https://www.instagram.com/europeanpopularfront
+The website is designed around a brutal modernist aesthetic:
 
+* Massive typography
+* Hard contrast
+* Poster-style layouts
+* Red / black / white palette
+* Minimal corporate polish
+* Strong political messaging
 
-# Papers and Recources
+---
 
-Identity paper: https://id.europopfront.eu/
+## DESIGN PRINCIPLES
 
-Our Charter (not in force, only proposal for now): 
-https://docs.google.com/document/d/1nOkZxl4VJl36gQ_Lt_TXiPHFl_2YlFpbOtgIZBAmB0o/edit?usp=sharing
+### CLEAN ≠ CORPORATE
+
+The design avoids:
+
+* startup aesthetics
+* soft gradients
+* glassmorphism
+* excessive animations
+* overexplaining
+
+Instead it focuses on:
+
+* structure
+* scale
+* tension
+* negative space
+* visual impact
+
+---
+
+## TECH STACK
+
+* HTML5
+* CSS3
+* Tailwind CDN
+* Google Fonts
+
+No frameworks.
+No build tools.
+No unnecessary complexity.
+
+---
+
+## FILE STRUCTURE
+
+```text
+/
+├── index.html
+├── style.css
+└── README.md
+```
+
+---
+
+## TYPOGRAPHY
+
+### Headlines
+
+* Oswald
+* Bold / Black
+* ALL CAPS
+
+### Body
+
+* Inter
+* Compact
+* Functional
+
+### Utility / Labels
+
+* JetBrains Mono
+
+---
+
+## COLOUR SYSTEM
+
+| Role        | Colour    |
+| ----------- | --------- |
+| Primary Red | `#ff0052` |
+| White       | `#fffffd` |
+| Dark Grey   | `#1a1a1a` |
+
+---
+
+## VISUAL LANGUAGE
+
+### SYMBOLS
+
+✔ = Positive
+✖ = Rejection
+≠ = Contrast / opposition
+
+---
+
+### STRUCTURE
+
+The website uses:
+
+* rigid grids
+* floating poster blocks
+* thick borders
+* heavy shadows
+* oversized slogans
+
+Inspired by:
+
+* Swiss political posters
+* Brutalist print layouts
+* Underground zines
+* Neo-brutalist web design
+* European activist graphics
+
+---
+
+## LOCAL DEVELOPMENT
+
+Simply open:
+
+```text
+index.html
+```
+
+in a browser.
+
+Or use a lightweight local server:
+
+```bash
+python -m http.server
+```
+
+---
+
+## CUSTOMISATION
+
+Main styling variables are located in:
+
+```css
+:root {
+    --primary-red: #ff0052;
+    --bg-white: #fffffd;
+    --text-grey: #1a1a1a;
+}
+```
+
+---
+
+## PHILOSOPHY
+
+EUROPE IS NOT A MARKET.
+
+EUROPE IS A POLITICAL PROJECT.
+
+---
+
+## LICENSE
+
+Open source.
+Modify freely.
+Build something better.

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | {{orgFullName}}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        html,
+        body {
+            min-height: 100%;
+            overflow-y: auto;
+        }
+
+        .error-shell {
+            flex: 1;
+            display: grid;
+            place-items: center;
+            padding: clamp(1.5rem, 4vw, 4rem);
+        }
+
+        .error-card {
+            width: min(100%, 780px);
+            background: var(--card-bg);
+            color: var(--card-text);
+            border: var(--border) solid var(--line);
+            box-shadow: 14px 14px 0 var(--shadow-color);
+            padding: clamp(1.5rem, 5vw, 3.5rem);
+            position: relative;
+        }
+
+        .error-code {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--red);
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .error-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(4.5rem, 18vw, 11rem);
+            font-weight: 900;
+            line-height: 0.85;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .error-title span {
+            color: var(--red);
+        }
+
+        .error-copy {
+            max-width: 34rem;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            line-height: 1.5;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .error-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .error-actions .paper-btn {
+            min-width: 12rem;
+        }
+
+        @media (max-width: 640px) {
+            .site-header {
+                align-items: flex-start;
+                gap: 0.8rem;
+                padding: 1rem;
+            }
+
+            .brand span {
+                font-size: 0.9rem;
+                line-height: 1.1;
+            }
+
+            .error-actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-container">
+        <!-- Same serious header, but now the page is lost. Extremely professional. -->
+        <header class="site-header">
+            <div class="brand">
+                <img src="https://pbs.twimg.com/profile_images/2041811697007005696/0KXWhOI8_400x400.jpg" alt="{{orgLogoAlt}}" data-i18n-attr="alt:orgLogoAlt">
+                <span data-i18n="orgFullName">{{orgFullName}}</span>
+            </div>
+            <nav class="top-nav">
+                <a href="index.html" data-i18n="home">HOME</a>
+            </nav>
+        </header>
+
+        <main class="error-shell">
+            <!-- Error box. Big 404 energy, small amount of actual functionality. -->
+            <section class="error-card" aria-labelledby="error-title">
+                <div class="error-code">ERROR // 404</div>
+                <h1 id="error-title" class="error-title" data-i18n-html="errorTitle">PAGE <span>LOST</span></h1>
+                <p class="error-copy" data-i18n="errorCopy">The page you were looking for is not in the portal. Return to the front page and continue from there! :D</p>
+                <div class="error-actions">
+                    <a href="index.html" class="paper-btn"><span data-i18n="returnHome">RETURN HOME</span> <span>&rarr;</span></a>
+                    <a href="https://discord.gg/VD7MaZTMdN" target="_blank" rel="noopener" class="paper-btn"><span data-i18n="joinDiscord">JOIN DISCORD</span> <span>&rarr;</span></a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Decorative background loader. Maybe the posters know where the missing page went. -->
+    <div id="background-scatter" class="bg-decorations"></div>
+    <script src="translations.js"></script>
+    <script src="scatter.js"></script>
+</body>
+</html>

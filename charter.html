@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{orgShortName}} Charter | {{orgShortName}} Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        html,
+        body {
+            background: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .subpage-board {
+            background: var(--board-bg);
+            padding: 40px;
+            box-sizing: border-box;
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .charter-card {
+            width: 100%;
+            max-width: 1100px;
+            margin: 20px 0;
+            background-color: var(--card-bg);
+            color: var(--card-text);
+            border: var(--border) solid var(--line);
+            box-shadow: 10px 10px 0 var(--shadow-color);
+            padding: calc(var(--pad) * 2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .charter-card h1,
+        .charter-card h2,
+        .charter-card h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .charter-card h1 {
+            font-size: clamp(2.3rem, 6vw, 5rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .charter-card h2 {
+            color: var(--red);
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .charter-card h3 {
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.6rem;
+        }
+
+        .charter-divider {
+            border: none;
+            border-top: 3px solid var(--red);
+            margin: 1.5rem 0 2rem;
+        }
+
+        .charter-text {
+            color: var(--muted-text);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .charter-text p,
+        .charter-text ul {
+            margin-bottom: 1rem;
+        }
+
+        .charter-text ul {
+            padding-left: 1.5rem;
+        }
+
+        .charter-text li {
+            margin-bottom: 0.35rem;
+        }
+
+        .charter-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 700px) {
+            .subpage-board {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="subpage-board">
+        <!-- The charter card. Lots of text, one big bordered box, democracy with CSS padding. -->
+        <article class="charter-card">
+            <div class="card-code">CHARTER // 01</div>
+            <h1>Charter of {{orgFullName}}</h1>
+            <hr class="charter-divider">
+
+            <div class="charter-text">
+                <h2>Preamble</h2>
+                <p>We, the members of {{orgFullName}} ({{orgShortName}}), establish this Charter to define the structure, principles, and governance of our community.</p>
+                <p>This Charter ensures democratic participation and accountable governance. It establishes the rights of members, the responsibilities of leadership, and the procedures by which the organization conducts its affairs.</p>
+                <p>Through this document, the {{orgShortName}} commits itself to democratic values, open participation, and the orderly administration of the community.</p>
+
+                <h2>Title I — The Community</h2>
+                <h3>§1 Name</h3>
+                <p>The organization governed by this Charter shall be known as {{orgFullName}} ({{orgShortName}}).</p>
+                <h3>§2 Purpose</h3>
+                <p>The {{orgShortName}} exists to provide a platform for political discussion, collaboration, and democratic participation among its members.</p>
+                <h3>§3 Authority of the Charter</h3>
+                <p>This Charter is the highest governing document of the {{orgShortName}}. All rules, policies, and decisions must conform to it.</p>
+
+                <h2>Title II — The {{orgShortName}}</h2>
+                <h3>§1 Nature of the Organization</h3>
+                <p>{{orgFullName}} ({{orgShortName}}) exists as a left-wing and European internationalist platform for political discussion, organisation, and collaboration among individuals who share the goals of solidarity, social justice, democracy, internationalism and progressive thought. The {{orgShortName}} is committed to furthering the social and class struggle of the people of Europe, and aims to aid in achieving a unification of the European continent in the name of proletarian internationalism as well as the establishment of leftist governance across Europe. The {{orgShortName}} does not adhere to a single political ideology or tradition, but rather aims to unite the European left to further the goals outlined here in unity.</p>
+                <h3>§2 Principles</h3>
+                <p>The {{orgShortName}} is guided by the following principles:</p>
+                <ul>
+                    <li><strong>Democracy</strong> — A political system in which supreme power is vested within the people and all decisions can he held accountable in some way, whether this power is exercised trough elected representative institutions or trough whole-process participation.</li>
+                    <li><strong>Social Justice</strong> — Societies should reduce inequality and ensure fair access to opportunities.</li>
+                    <li><strong>Solidarity</strong> — Communities and individuals should support one another across boundaries.</li>
+                    <li><strong>Human Dignity</strong> — The dignity of man is untouchable. This dignity is violated when a concrete human being is degraded to an object, to a mere means, to a replaceable quantity.</li>
+                    <li><strong>Freedom of Expression</strong> — Members may express ideas openly within the bounds of respectful discussion.</li>
+                </ul>
+                <h3>§3 Opposition to Anti-Democratic Ideologies</h3>
+                <p>The {{orgShortName}} opposes ideologies that undermine democracy, equality, or human dignity, including:</p>
+                <ul>
+                    <li>Fascism</li>
+                    <li>Nazism</li>
+                    <li>Ultranationalism</li>
+                    <li>Racial supremacy</li>
+                </ul>
+                <p>Advocacy of such ideologies is incompatible with membership in the {{orgShortName}}.</p>
+                <h3>§4 Definitions of Key Terms</h3>
+                <p><strong>Fascism:</strong> A political ideology characterized by authoritarian leadership, ultranationalism, suppression of opposition, and enforcement of ideological conformity.</p>
+                <p><strong>Nazism:</strong> Ideology historically associated with National Socialism, including racial supremacy, antisemitism, and dictatorship.</p>
+                <p><strong>Racial supremacy:</strong> Belief in inherent superiority or inferiority of individuals based on race or ethnicity.</p>
+
+                <h2>Title III — Membership</h2>
+                <h3>§1 Definition</h3>
+                <p>A Member is an individual granted membership under this Charter. Participation in the community without membership confers Non-Member status.</p>
+                <h3>§2 Acquisition of Membership</h3>
+                <p>Membership may be granted to individuals who:</p>
+                <ul>
+                    <li>are Leftist in support of European internationalism</li>
+                    <li>support the principles of the {{orgShortName}}.</li>
+                    <li>complete a Council-established membership process, if one exists</li>
+                </ul>
+                <h3>§3 Loss of Membership</h3>
+                <p>Membership may be suspended or revoked due to:</p>
+                <ul>
+                    <li>Voluntary resignation.</li>
+                    <li>Prolonged inactivity.</li>
+                    <li>Breach of rules or professional misconduct.</li>
+                    <li>Promotion of prohibited ideologies.</li>
+                    <li>Failure to align with Leftist, European internationalist principles.</li>
+                </ul>
+                <p>Membership revocation shall follow fair procedures. The right to appeal a revocation is guaranteed.</p>
+                <h3>§4 Rights of Members</h3>
+                <p>Members enjoy the right to:</p>
+                <ul>
+                    <li><strong>Participate:</strong> Full engagement in discussions and activities.</li>
+                    <li><strong>Vote:</strong> Rights in elections, referenda, and democratic processes after being a member for 2 weeks.</li>
+                    <li><strong>Stand for Office:</strong> Eligibility for Council positions after being a member for 2 weeks.</li>
+                    <li><strong>Petition:</strong> Ability to submit proposals or complaints to the Council.</li>
+                    <li><strong>Appeal:</strong> Right to challenge bans, mutes, or disciplinary actions.</li>
+                    <li><strong>Dignity:</strong> Protection from harassment or discrimination.</li>
+                </ul>
+                <h3>§5 Rights of Non-Members</h3>
+                <p>Non-Members may participate in discussions and may join the Discord Server, but:</p>
+                <ul>
+                    <li>Cannot vote in elections.</li>
+                    <li>Cannot run in elections.</li>
+                    <li>Cannot submit formal petitions requiring Council consideration.</li>
+                </ul>
+                <p>Non-Members are still entitled to respectful treatment.</p>
+
+                <h2>Title IV — The Council</h2>
+                <h3>§1 Composition</h3>
+                <p>The Council serves as the principal governing body of the {{orgShortName}}. Its members are elected by the Membership and are classified into two distinct groups: The Leadership and The Commission.</p>
+                <p>The Leadership shall consist of the elected Council with the Chairperson as their first among equals. The Chairperson shall provide overall direction to the {{orgShortName}} and ensure the effective functioning of the Council.</p>
+                <p>The Chairperson shall:</p>
+                <ul>
+                    <li>serve as the representative of the Council as a first among equals and principal public representative of the {{orgShortName}}.</li>
+                    <li>preside over Council meetings.</li>
+                    <li>exercise the authority to determine binding general guidelines for the policy and direction of the {{orgShortName}} in accordance with this Charter and subject to overruling by the Council.</li>
+                    <li>be able to be voted out by a majority council decision upon which an internal election using Ranked Choice Voting is triggered within the council.</li>
+                </ul>
+                <p>The Commission shall generally be composed of members of the Council serving as Commissioners. Each Commission shall be tasked with a specific portfolio as defined in this Charter and shall exercise general autonomy in the performance of their duties within their respective areas, granted that any decision made is able to be overturned by the elected Council via majority vote.</p>
+                <p>Commissioners shall propose initiatives and implement decisions of the Council within their assigned portfolios. They shall ensure that the policies and directives of the Council are effectively carried out. Commissioners have an information obligation to the Council.</p>
+                <p>Each Commission may appoint Advisors to assist in the execution of their responsibilities. Commissioners shall remain fully responsible for the actions and conduct of their Advisors. Advisors and Commissioners can be removed at any time by majority vote within the Council. If a Commission has 2 Commissioners both must be recalled and a new internal election for the position must be called.</p>
+                <p>The Commissioners shall operate under the general policy guidelines established by the Council and Chairperson. The Council shall have the power to amend or override general guidelines by majority vote.</p>
+                <p>Every Councillor must fill a position, whether that be Chairperson, Commissioner or Advisor to one (1) or multiple Commissions. These Commissions are:</p>
+                <ul>
+                    <li><strong>Commission for Community Affairs (CCA):</strong> Responsible for the growth, engagement, and well-being of the {{orgShortName}} community, member recruitment, retention, support, events, initiatives, culture, and cohesion.</li>
+                    <li><strong>Commission for Moderation &amp; Justice (CMJ):</strong> Responsible for the oversight of moderation and enforcement of community rules. The CMJ appoints and supervises up to five (5) moderators and ensures rules are applied fairly and consistently. The elected Council has full oversight and may reverse any decisions taken. The Chairperson also retains the right to temporarily remove moderator status from a moderator if there is found to have been an instance of power abuse.</li>
+                    <li><strong>Commission for Public Affairs (CPA):</strong> Responsible for public communication and messaging, official announcements, public campaigns, and consistent public presence. The CPA shall be managed by 2 Co-Commissioners internally selected within the Council. The Co-Commissioners can select social media teams. Members of this team may send their posts for specific platforms to the commissioners. Approval from only one (1) Commissioner is needed to post. Both Commissioners can veto an approval from the other Commissioner in order to delete a post.</li>
+                    <li><strong>Commission for Internal Management (CIM):</strong> Responsible for the internal management of the {{orgShortName}}, the digital infrastructure of the {{orgShortName}} Discord server and, if they exist, other platforms, including bots, channels, roles, and permissions.</li>
+                </ul>
+                <h3>§2 Decision Making</h3>
+                <p>All decisions, appointments, or other actions of the Council require a majority in favor of votes cast by Council members, excluding abstentions, unless otherwise specified.</p>
+                <p>In case of a tie, the Chairperson's vote shall decide the outcome.</p>
+                <h3>§3 Vacancies</h3>
+                <p>Vacancies or temporary absences of Commissioners may be filled as follows:</p>
+                <ul>
+                    <li>The Council may nominate an Advisor or a Member to temporarily fill their Commissioner seat until their return or until a by-election is held.</li>
+                    <li>A by-election.</li>
+                    <li>If the Chairperson position is vacant, an internal election will be held within the council to select a new Chairperson using RCV.</li>
+                    <li>A recall election for a Councillor can be called if 87.5% of members agree in a petition to recall the Councillor or there is a unanimous council vote to do a recall election for a Councillor's seat.</li>
+                </ul>
+                <h3>§4 Advisors</h3>
+                <p>Each Commission may appoint Advisors to assist them in fulfilling their portfolio responsibilities with approval from the Council. Commissioners may release Advisors of their duties at any time.</p>
+                <p>Advisors may not independently bind the {{orgShortName}}. Commissioners are fully responsible for the actions and conduct of their Advisors.</p>
+
+                <h2>Title V — Democratic Process</h2>
+                <h3>§1 Elections</h3>
+                <p>Elections shall be administered by the Council or by an Election Committee selected by the Council. All elections shall be conducted using Ranked Choice Voting (RCV). Each electoral period shall be twelve (12) months, beginning upon the official announcement of election results.</p>
+                <p>The Members of the Council shall, as far as practicable, be elected in a single election. Candidates must have been members of the {{orgShortName}} for at least two (2) weeks and be in good standing at the time of nomination and throughout the election process.</p>
+                <p>Following the certification of the election results, the Councillors shall determine among themselves the allocation of Commission portfolios as defined in this Charter. If no agreement is reached within seven (7) days, the Chairperson shall decide.</p>
+                <p>Each election shall proceed through the following stages: Nomination Period, Campaign Period, Voting Period, and Tabulation and Announcement. Members may nominate themselves for any available position. Members may also nominate other Members; however, such nominations shall be valid only upon the explicit acceptance of the nomination by the Member concerned.</p>
+                <p>Candidates must make public their twitter/substack and/or other social media accounts engaging in political commentary and/or analysis.</p>
+                <h3>§2 Petitions</h3>
+                <p>Any member of the {{orgShortName}} may initiate a petition proposing to take or reverse a specific action, decision, or policy to be decided by referendum. A petition shall be considered valid once it has received signatures equal to at least one-third (1/3) of the number of total members.</p>
+                <p>The Council shall verify the validity of the signatures and determine whether the required threshold has been reached. A petition that has been submitted and failed may not be resubmitted in identical or substantially similar form within thirty (30) days of the decision.</p>
+                <h3>§3 Referendums</h3>
+                <p>If a petition reaches the required number of signatures, a referendum shall be held within three (3) days of the verification of the petition. A referendum shall pass if it receives a simple majority of votes cast in favor.</p>
+                <p>If a referendum passes, the Council shall be bound to implement and comply with the outcome of the referendum. The subject of a referendum may include any matter concerning the {{orgShortName}}, including but not limited to the postponement or scheduling of full council elections, relations with other organizations or individuals, amendments to this Charter, or structural changes to the server.</p>
+
+                <h2>Title VI — Moderation</h2>
+                <h3>§1 Authority</h3>
+                <p>Moderation of the {{orgShortName}} community shall fall under the responsibility of the Commission for Moderation &amp; Justice.</p>
+                <h3>§2 Moderators</h3>
+                <p>Moderators are responsible for enforcing community rules and maintaining order within the {{orgShortName}} community. Moderators shall be appointed by the Commission for Moderation &amp; Justice, subject to the approval of the Council. Moderators serve at the discretion of the Commission for Moderation &amp; Justice and may be removed by the Commission or by a decision of the Council.</p>
+                <h3>§3 Powers of Moderators</h3>
+                <p>Moderators may:</p>
+                <ul>
+                    <li>Issue warnings to members or participants.</li>
+                    <li>Apply temporary or permanent mutes.</li>
+                    <li>Issue bans with discretion.</li>
+                    <li>Enforce community rules and moderation policies.</li>
+                    <li>Report serious misconduct to the Commission for Moderation &amp; Justice or the Council and take action accordingly.</li>
+                </ul>
+                <h3>§4 Oversight</h3>
+                <p>The Commission for Moderation &amp; Justice shall supervise moderation practices and ensure that moderators act fairly, consistently, and in accordance with this Charter and established community rules. The elected Council retains ultimate oversight to ensure that moderation remains transparent, accountable, and consistent with the rights established in this Charter.</p>
+                <p>The elected Council can at any time reverse moderation decisions by a majority vote.</p>
+
+                <h2>Title VII — Amendments</h2>
+                <h3>§1 Proposal</h3>
+                <p>Amendments to this Charter may be proposed either by decision of the Council or by a valid petition submitted by members in accordance with this Charter.</p>
+                <h3>§2 Approval</h3>
+                <p>An amendment shall be adopted only if:</p>
+                <ul>
+                    <li>It receives a two-thirds (2/3) majority in favor of votes cast by the Council and a simple majority in favor of votes cast in a community referendum; or</li>
+                    <li>It receives a simple majority in favor of votes cast by the Council and a two-thirds (2/3) majority in favor of votes cast in a community referendum; or</li>
+                    <li>It receives a two-thirds (2/3) majority in favor of votes cast by both the Council and the community referendum.</li>
+                </ul>
+
+                <h2>Title VIII — Interpretation</h2>
+                <h3>§1 Authority</h3>
+                <p>The Council shall have the authority to interpret the provisions of this Charter and shall ensure its application and compliance.</p>
+                <h3>§2 Precedence</h3>
+                <p>This Charter shall take precedence over all other rules, policies, or guidelines within the {{orgShortName}}. If any rule, policy or guideline is in conflict with this charter, it shall prevail.</p>
+
+                <h2>Title IX — Adoption</h2>
+                <p>This Charter shall enter into force upon its approval by the community through a referendum and upon a simple majority vote in favor by the Council.</p>
+            </div>
+
+            <div class="charter-actions">
+                <!-- Exit button, because scrolling this much law deserves a way out. -->
+                <a href="home-grid.html" target="_self" class="paper-btn" data-i18n="returnTerminal">
+                    ← RETURN TO TERMINAL
+                </a>
+            </div>
+        </article>
+    </div>
+
+    <script src="translations.js"></script>
+</body>
+</html>

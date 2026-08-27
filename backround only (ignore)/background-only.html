@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{orgShortName}} Background Only</title>
+    <style>
+        :root {
+            --page-bg: #121212;
+            --card-bg: #ffffff;
+            --line: #000000;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: var(--page-bg);
+        }
+
+        body {
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+            background-size: 60px 60px;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .bg-decorations {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .decor-box {
+            position: absolute;
+            display: flex;
+            width: 300px;
+            padding: 6px;
+            background: var(--card-bg);
+            border: 3px solid var(--line);
+            box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.8);
+            user-select: none;
+        }
+
+        .decor-box img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: contrast(1.05) brightness(0.95);
+        }
+    </style>
+</head>
+<body>
+    <!-- Empty bucket for posters. The script fills it because HTML apparently needed supervision. -->
+    <div id="background-scatter" class="bg-decorations" aria-hidden="true"></div>
+    <script>
+        const container = document.getElementById("background-scatter");
+        const imageList = [];
+        const imageFormats = ["jpg", "png", "jpeg", "webp"];
+        const imageLimit = 40;
+
+        // Brute-force poster loading. If file names are predictable, who needs dignity?
+        async function scanImages() {
+            const loadedImages = await Promise.all(
+                Array.from({ length: imageLimit }, (_, index) => tryLoad(index + 1))
+            );
+
+            imageList.push(...loadedImages.filter(Boolean));
+            shuffleArray(imageList);
+            distributePosters();
+        }
+
+        // Same image number, different extensions. We are basically guessing with confidence.
+        function tryLoad(num) {
+            return new Promise((resolve) => {
+                let attempts = 0;
+
+                imageFormats.forEach((ext) => {
+                    const img = new Image();
+                    img.src = `pictures/${num}.${ext}`;
+
+                    img.onload = () => {
+                        resolve({
+                            src: img.src,
+                            ratio: img.naturalHeight / img.naturalWidth || 1
+                        });
+                    };
+
+                    img.onerror = () => {
+                        attempts++;
+                        if (attempts === imageFormats.length) resolve(null);
+                    };
+                });
+            });
+        }
+
+        // Shuffles the array so the background looks intentionally messy instead of accidentally messy.
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Covers the whole screen with posters. I assume this is what graphic design means.
+        function distributePosters() {
+            if (!container || imageList.length === 0) return;
+
+            container.innerHTML = "";
+
+            const viewport = {
+                width: window.innerWidth,
+                height: window.innerHeight
+            };
+            const columnCount = Math.max(5, Math.min(12, Math.ceil(viewport.width / 150)));
+            const gap = -34;
+            const baseWidth = Math.max(190, Math.min(340, (viewport.width - gap * (columnCount - 1)) / columnCount));
+            const columns = Array.from({ length: columnCount }, (_, columnIndex) => ({
+                x: columnIndex * (baseWidth + gap) - baseWidth * 0.45 - Math.random() * 80,
+                y: -260 - Math.random() * 220
+            }));
+            const placements = [];
+            let imageIndex = 0;
+            const repeatDistance = Math.min(520, Math.max(260, baseWidth * 1.25, viewport.width * 0.16));
+
+            while (Math.min(...columns.map((column) => column.y)) < viewport.height + 460) {
+                const column = columns.reduce((shortest, current) => (
+                    current.y < shortest.y ? current : shortest
+                ));
+                const scale = 0.95 + Math.random() * 0.55;
+                const boxWidth = baseWidth * scale;
+                const left = column.x + (Math.random() - 0.5) * 170;
+                const top = column.y + (Math.random() - 0.5) * 70;
+                const image = pickImageForSpot(imageIndex, placements, left, top, boxWidth, repeatDistance);
+
+                if (!image) {
+                    column.y += baseWidth * 0.5;
+                    imageIndex++;
+                    continue;
+                }
+
+                const boxHeight = Math.max(180, Math.min(560, boxWidth * image.ratio));
+                const overlapY = Math.min(220, boxHeight * (0.38 + Math.random() * 0.22));
+
+                placements.push({
+                    src: image.src,
+                    left,
+                    top,
+                    width: boxWidth,
+                    height: boxHeight,
+                    rotation: Math.random() * 38 - 19,
+                    zIndex: Math.floor(Math.random() * 16),
+                    shadow: 5 + Math.floor(Math.random() * 12)
+                });
+
+                column.y += boxHeight + gap - overlapY + Math.random() * 18;
+                imageIndex++;
+            }
+
+            const fillerCount = Math.max(30, Math.floor(columnCount * 4));
+            for (let i = 0; i < fillerCount; i++) {
+                const boxWidth = baseWidth * (0.75 + Math.random() * 0.65);
+                const left = -baseWidth * 0.5 + Math.random() * (viewport.width + baseWidth);
+                const top = -baseWidth * 0.5 + Math.random() * (viewport.height + baseWidth);
+                const image = pickImageForSpot(imageIndex, placements, left, top, boxWidth, repeatDistance);
+                if (!image) continue;
+
+                placements.push({
+                    src: image.src,
+                    left,
+                    top,
+                    width: boxWidth,
+                    height: Math.max(180, Math.min(560, boxWidth * image.ratio)),
+                    rotation: Math.random() * 46 - 23,
+                    zIndex: Math.floor(Math.random() * 18),
+                    shadow: 5 + Math.floor(Math.random() * 12)
+                });
+
+                imageIndex++;
+            }
+
+            placements.forEach(appendImage);
+        }
+
+        // Picks an image that is not too close to its clone, because duplicate posters get clingy.
+        function pickImageForSpot(startIndex, placements, left, top, width, minDistance) {
+            for (let offset = 0; offset < imageList.length; offset++) {
+                const image = imageList[(startIndex + offset) % imageList.length];
+                const height = Math.max(180, Math.min(560, width * image.ratio));
+                const tooClose = placements.some((placement) => (
+                    placement.src === image.src &&
+                    getRectDistance({ left, top, width, height }, placement) < minDistance
+                ));
+
+                if (!tooClose) return image;
+            }
+
+            return null;
+        }
+
+        // Rectangle distance math. I nodded while writing this and that counts as understanding.
+        function getRectDistance(a, b) {
+            const dx = Math.max(b.left - (a.left + a.width), a.left - (b.left + b.width), 0);
+            const dy = Math.max(b.top - (a.top + a.height), a.top - (b.top + b.height), 0);
+            return Math.hypot(dx, dy);
+        }
+
+        // Makes the actual poster element and flings it into the page. Tastefully? unclear.
+        function appendImage({ src, left, top, width, rotation, zIndex, shadow }) {
+            const box = document.createElement("div");
+            const img = document.createElement("img");
+
+            box.className = "decor-box";
+            img.src = src;
+            img.alt = "";
+            img.loading = "lazy";
+
+            box.appendChild(img);
+            box.style.width = `${width}px`;
+            box.style.top = `${top}px`;
+            box.style.left = `${left}px`;
+            box.style.transform = `rotate(${rotation}deg)`;
+            box.style.zIndex = zIndex;
+            box.style.boxShadow = `${shadow}px ${shadow}px 0 rgba(0, 0, 0, 0.8)`;
+            container.appendChild(box);
+        }
+
+        // Debounce: the browser wants to resize constantly, so we tell it to calm the hell down.
+        function debounce(callback, wait) {
+            let timeout;
+            return () => {
+                window.clearTimeout(timeout);
+                timeout = window.setTimeout(callback, wait);
+            };
+        }
+
+        window.addEventListener("DOMContentLoaded", scanImages);
+        window.addEventListener("resize", debounce(distributePosters, 150));
+    </script>
+</body>
+</html>

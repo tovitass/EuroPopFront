@@ -1,86 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ABOUT THE EPF | EUROPEAN POPULAR FRONT</title>
-    <meta name="description" content="Learn more about the European Popular Front - our mission, values, and vision for a united leftist Europe." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="aboutTitle">About Us | {{orgShortName}} Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght=600;700;800;900&family=JetBrains+Mono:wght=700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Iframe page reset. The parent page is in charge, which feels legally suspicious. */
+        html, body {
+            background: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* Big wrapper. It stands around looking useful while flexbox does the weird shit. */
+        .subpage-board {
+            background: var(--board-bg);
+            padding: 40px;
+            box-sizing: border-box;
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        /* Big text box. It has borders, therefore it is probably important. */
+        .manifesto-card {
+            width: 100%;
+            max-width: 1100px;
+            margin: 20px 0;
+            background-color: var(--card-bg);
+            color: var(--card-text);
+            border: var(--border) solid var(--line);
+            box-shadow: 10px 10px 0 var(--shadow-color);
+            padding: calc(var(--pad) * 2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .manifesto-divider {
+            border: none;
+            border-top: 3px solid var(--red);
+            margin: 1.5rem 0 2rem 0;
+        }
+
+        /* Paragraph styling, because default browser text looks like it gave up. */
+        .manifesto-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--muted-text);
+            max-width: 980px;
+        }
+
+        .manifesto-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .manifesto-text p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <div class="nav-container">
-            <p class="logo-text">EPF // EURO-POP</p>
-            <div class="links">
-                <a href="index.html">Home</a>
-                <a href="about.html" class="active">About</a>
-                <a href="news.html">The Spinelli Report</a>
+    <div class="subpage-board" style="display: flex;">
+
+        <article class="manifesto-card" style="display: flex;">
+
+            <div class="card-code" data-i18n="manifestoCode">MANIFESTO // 01</div>
+            <h2 data-i18n="aboutFrontTitle">ABOUT THE FRONT</h2>
+
+            <hr class="manifesto-divider">
+
+           <div class="manifesto-text">
+    <p data-i18n-html="aboutP1">
+        The <strong>{{orgFullName}} ({{orgShortName}})</strong> is a broad, big-tent pan-European community bringing together democratic socialists, social democrats, eco-socialists, trade unionists, and progressive left currents. We provide a collaborative space to engage across different traditions, cultivate a genuine pan-European political culture, and work toward a common European future.
+    </p>
+    <p data-i18n-html="aboutP2">
+        At its core, {{orgShortName}} exists to deepen European integration through a leftist, Eurofederalist lens. We believe continental challenges (like economic inequality, climate change, and rising authoritarianism) cannot be solved through nationalism. They require trans-border cooperation, democratic institutions acting at scale, and a vision grounded in solidarity rather than austerity.
+    </p>
+    <p data-i18n-html="aboutP3">
+        {{orgShortName}} is explicitly anti-fascist, anti-racist, anti-authoritarian, and anti-exclusionary. We reject chauvinism, xenophobia, and reactionary politics in all forms. Operating as both a think-tank and a strategic forum, we value intellectual openness and rigorous analysis to build realistic alternatives capable of shaping the continent.
+    </p>
+    <p data-i18n-html="aboutP4">
+        <strong>{{orgFullName}} is ultimately a project of hope: a belief that another Europe is possible, and that building it requires a left capable of thinking and acting beyond borders.</strong>
+    </p>
+</div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: 3rem;">
+                <a href="home-grid.html" target="_self" class="paper-btn" data-i18n="returnTerminal">
+                    ← RETURN TO TERMINAL
+                </a>
             </div>
-        </div>
-    </nav>
 
-    <header class="hero">
-        <h1>ABOUT<br>THE EPF</h1>
-        <div class="red-line thick"></div>
-        <p>OUR MISSION, VALUES, AND VISION FOR A UNITED LEFTIST EUROPE.</p>
-    </header>
+        </article>
 
-    <main>
-        <section class="card about-block">
-            <span class="section-label">OUR_MISSION</span>
-            <div class="red-line thin"></div>
-            <p class="big-quote">BUILDING A EUROPE<br>WHERE SOLIDARITY<br><span style="color: var(--epf-red)">TRUMPS DIVISION.</span></p>
+    </div>
 
-            <div class="about-copy">
-                <h2>WHAT WE STAND FOR</h2>
-                <p>EPF is a left-wing Eurofederalist project that brings together socialists, social democrats, and left federalists under a common banner. We believe Europe's future lies in unity, not fragmentation; in equality, not hierarchy; in democracy, not technocracy.</p>
-
-                <h3>Core Principles</h3>
-                <ul>
-                    <li><strong>European Unity:</strong> We reject nationalism and borders. Europe must unite as a federal democracy.</li>
-                    <li><strong>Social Justice:</strong> Economic equality, workers' rights, and social welfare for all Europeans.</li>
-                    <li><strong>Democratic Socialism:</strong> Markets serve people, not the other way around. Public ownership of key industries.</li>
-                    <li><strong>Environmental Protection:</strong> A Green New Deal for Europe, transitioning to sustainable energy.</li>
-                    <li><strong>Anti-Fascism:</strong> We stand against all forms of extremism and authoritarianism.</li>
-                </ul>
-
-                <h2>OUR HISTORY</h2>
-                <p>Founded in 2024, EPF emerged from the recognition that traditional European politics failed to address the continent's deepest challenges. As nationalism rose and inequality grew, we saw the need for a new political force that transcends borders and unites the left.</p>
-                <p>Starting as an online community, EPF has grown into a think tank and political movement, bringing together activists, intellectuals, and organizers from across Europe. Our work focuses on policy development, community building, and strategic organizing for a federal Europe.</p>
-
-                <h2>WHO WE ARE</h2>
-                <p>EPF is not a single ideology — it's a popular front. We welcome socialists and communists, social democrats and progressives, left federalists and Europeanists, environmental activists, labor organizers, and anyone committed to a united, leftist Europe.</p>
-                <p>We are not a party, but a movement. Not a sect, but a broad tent. Our strength lies in our diversity and our shared commitment to European unity and social justice.</p>
-
-                <h2>OUR STRUCTURE</h2>
-                <p>EPF operates with a central command structure that coordinates our activities while maintaining flexibility for local initiatives. We have a Central Committee for strategic direction, Working Groups for issue-based work, Regional Coordinators for local engagement, and online platforms for coordination.</p>
-
-                <h2>GET INVOLVED</h2>
-                <p>Ready to join the fight for a united leftist Europe? Here are some ways to get involved:</p>
-                <ul>
-                    <li>Join our Discord server for discussions and organizing</li>
-                    <li>Follow us on social media for updates and analysis</li>
-                    <li>Contribute to our policy work and research</li>
-                    <li>Organize locally and connect with our network</li>
-                    <li>Support our work through donations or volunteering</li>
-                </ul>
-                <br>
-                <a href="https://discord.gg/CsM9Y9SPD7" style="font-weight: 800; color: var(--epf-red); text-decoration: none; text-transform: uppercase; border-bottom: 3px solid var(--epf-red);">JOIN OUR DISCORD →</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="red-line thick"></div>
-        <p class="footer-bold">A BROAD TENT. A CLEAR DIRECTION. A EUROPE WORTH BUILDING.</p>
-        <p style="font-size: 0.9rem; margin-top: 1.5rem; opacity: 0.6; line-height: 1.6; max-width: 60ch;">
-            EPF IS A SMALL ONLINE COMMUNITY WITH A CENTRAL COMMAND STRUCTURE. WE FOCUS ON LEFT-PAN-EUROPEANISM AS A THINK TANK, ASPIRING TO REAL-WORLD IMPACT.
-        </p>
-    </footer>
-
+    <script src="translations.js"></script>
 </body>
 </html>

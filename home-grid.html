@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: transparent !important;
+            padding: 12px !important;
+            margin: 0 !important;
+            height: 100%;
+            display: block;
+            overflow-y: auto;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+        .grid-board {
+            background: transparent;
+            padding: 10px;
+            height: auto;
+            min-height: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-board" style="display: grid;">
+        <!-- This box is for joining. Somehow a link contains a button and nobody has arrested us. -->
+        <section class="card join-card">
+            <h2 data-i18n="joinTitle">JOIN THE FRONT</h2>
+            <p data-i18n="joinCopy">Organise internationally. Reject nationalism. Build European power.</p>
+            <a href="https://discord.gg/VD7MaZTMdN" target="_blank" style="text-decoration: none; margin-top: auto;">
+                <button class="primary-action" data-i18n="signUp">SIGN UP</button>
+            </a>
+        </section>
+
+<!-- Whole card is clickable. Very fancy, very "I hope target=_self means what I think it means". -->
+<a href="about.html" target="_self" class="card mission-card">
+    <h2 data-i18n="aboutTitle">ABOUT US</h2>
+    <p class="big-tent-text" data-i18n="aboutCopy">The {{orgShortName}} is a Big Tent that brings together Left-wing Europeans who have the shared vision of a more United Europe.</p>
+    <h3 data-i18n="valuesTitle">OUR VALUES</h3>
+    <table class="values-table">
+        <tr><td data-i18n="valueAntiFascism">Anti-Fascism</td><td data-i18n="valueEconomicDemocracy">Economic Democracy</td></tr>
+        <tr><td data-i18n="valueAntiAuthoritarianism">Anti-Authoritarianism</td><td data-i18n="valueWorkersRights">Workers' Rights</td></tr>
+        <tr><td data-i18n="valueEnvironmentalJustice">Environmental Justice</td><td data-i18n="valueFederalism">Pan-European Federalism</td></tr>
+        <tr><td data-i18n="valueSolidarity">Transnational Solidarity</td><td data-i18n="valueFairEconomics">Fair Economics</td></tr>
+    </table>
+</a>
+
+<!-- This one scrolls words forever because static text was apparently too chill. -->
+<a href="welcome.html" target="_self" class="card welcome-card">
+    <div class="card-header-area" style="padding: 0 0 0 0;">
+        <h2 class="welcome-headline" data-i18n="coalitionTitle">A DIVERSE COALITION</h2>
+    </div>
+    <div class="scroller-viewport">
+        <ul class="welcome-list" data-i18n-repeat="2" data-i18n-repeat-tag="li"></ul>
+    </div>
+    <p class="big-tent-text" data-i18n="manyOthers">...and many others!</p>
+</a>
+
+        <!-- Paper buttons go here. One works, one is basically decorative until someone feeds it a URL. -->
+        <section class="card strategy-card">
+            <h2 data-i18n="policyTitle">POLICY AND PAPERS</h2>
+            <div class="button-grid">
+                <a href="charter.html" target="_self" class="paper-btn">
+                    <span class="btn-icon" aria-hidden="true">§</span>
+                    <span class="btn-label" data-i18n="charter">01. THE {{orgShortName}} CHARTER</span>
+                </a>
+                <a href="toolkit.html" target="_self" class="paper-btn">
+                    <span class="btn-icon" aria-hidden="true">✦</span>
+                    <span class="btn-label">02. EPF TOOLKIT</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Social links. If an icon path is wrong, the button just looks embarrassed. -->
+        <section class="card links-card">
+            <h2 data-i18n="socials">MORE FROM US</h2>
+            <div class="button-grid">
+                <a href="https://x.com/EuroPopFront" target="_blank" rel="noopener noreferrer" class="paper-btn">
+                    <span class="btn-icon" aria-hidden="true"><img src="Icons/twitterpng.png" alt=""></span>
+                    <span class="btn-label">TWITTER</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="https://discord.europopfront.eu" target="_blank" rel="noopener noreferrer" class="paper-btn">
+                    <span class="btn-icon" aria-hidden="true"><img src="Icons/discord.ong.png" alt=""></span>
+                    <span class="btn-label">DISCORD</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="https://www.instagram.com/europeanpopularfront" target="_blank" rel="noopener noreferrer" class="paper-btn">
+                    <span class="btn-icon" aria-hidden="true"><img src="Icons/instagram.png" alt=""></span>
+                    <span class="btn-label">INSTAGRAM</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="https://www.reddit.com/r/EuroPopFront/" target="_blank" rel="noopener noreferrer" class="paper-btn">
+                    <span class="btn-icon" aria-hidden="true"><img src="Icons/reddit.png" alt=""></span>
+                    <span class="btn-label">REDDIT</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="https://1epf.substack.com/?utm_campaign=profile_chips" target="_blank" rel="noopener noreferrer" class="paper-btn">
+                    <span class="btn-icon" aria-hidden="true"><img src="Icons/substack.png" alt=""></span>
+                    <span class="btn-label">SUBSTACK</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+                <a href="https://the-spinelli-report.blogspot.com/" target="_self" class="paper-btn">
+                    <span class="btn-icon spinelli-icon" aria-hidden="true"><img src="Icons/Spinelli Report.png" alt=""></span>
+                    <span class="btn-label">THE SPINELLI REPORT</span>
+                    <span class="btn-arrow" aria-hidden="true">→</span>
+                </a>
+            </div>
+        </section>
+    </div>
+    <script src="translations.js"></script>
+</body>
+</html>

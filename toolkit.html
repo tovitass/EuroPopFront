@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPF Toolkit | EPF Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        html,
+        body {
+            background: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .subpage-board {
+            background: var(--board-bg);
+            padding: clamp(1rem, 2.5vw, 2.2rem);
+            box-sizing: border-box;
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1rem;
+        }
+
+        .toolkit-card {
+            width: 100%;
+            max-width: 1200px;
+            background-color: var(--card-bg);
+            color: var(--card-text);
+            border: var(--border) solid var(--line);
+            box-shadow: 10px 10px 0 var(--shadow-color);
+            padding: calc(var(--pad) * 1.6);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .toolkit-card h1,
+        .toolkit-card h2,
+        .toolkit-card h3 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            line-height: 1.05;
+        }
+
+        .toolkit-card h1 {
+            font-size: clamp(2.1rem, 5.2vw, 3.4rem);
+            margin-bottom: 0.6rem;
+        }
+
+        .toolkit-card h2 {
+            color: var(--red);
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            margin: 0 0 0.6rem;
+        }
+
+        .toolkit-card h3 {
+            font-size: 1rem;
+            margin: 0.8rem 0 0.35rem;
+        }
+
+        .toolkit-divider {
+            border: none;
+            border-top: 3px solid var(--red);
+            margin: 1.1rem 0 1.3rem;
+        }
+
+        .toolkit-intro {
+            color: var(--muted-text);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+            max-width: 900px;
+        }
+
+        .toolkit-quote {
+            font-size: 0.98rem;
+            line-height: 1.55;
+            color: var(--ink);
+            margin-bottom: 0.25rem;
+        }
+
+        .guide-shell {
+            background: var(--paper);
+            border: 3px solid var(--line);
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
+            padding: 1rem 1.1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 28rem;
+        }
+
+        .slide-counter {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--red);
+            font-size: 0.95rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .slide {
+            display: none;
+            flex: 1;
+        }
+
+        .slide.is-active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide h2 {
+            margin-top: 0;
+        }
+
+        .slide ul {
+            padding-left: 1.1rem;
+            margin: 0.4rem 0 0;
+        }
+
+        .slide li {
+            margin-bottom: 0.45rem;
+            line-height: 1.5;
+        }
+
+        .slide p {
+            color: var(--muted-text);
+            line-height: 1.6;
+        }
+
+        .slide-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 0.8rem;
+            border-top: 2px solid rgba(0,0,0,0.1);
+        }
+
+        .toolkit-grid {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-auto-rows: 1fr;
+            align-items: stretch;
+            gap: 1rem;
+        }
+
+        .toolkit-panel {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            justify-content: space-between;
+        }
+
+        .toolkit-panel .card-code {
+            margin-bottom: 0.35rem;
+        }
+
+        .toolkit-list {
+            display: grid;
+            gap: 0.5rem;
+            padding-left: 1rem;
+            margin: 0.4rem 0 1rem;
+            color: var(--muted-text);
+            line-height: 1.55;
+        }
+
+        .toolkit-btn,
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            background: var(--card-bg);
+            color: var(--card-text);
+            border: 2px solid var(--line);
+            padding: 0.65rem 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.12);
+            transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease, color 0.16s ease, border-color 0.16s ease;
+        }
+
+        .toolkit-btn:hover,
+        .nav-btn:hover {
+            background: var(--red);
+            color: white;
+            border-color: var(--red);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.16);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .swatch-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin: 0.6rem 0 0.8rem;
+        }
+
+        .swatch {
+            min-width: 120px;
+            border: 2px solid var(--line);
+            padding: 0.55rem;
+            background: var(--paper);
+            color: var(--ink);
+            font-size: 0.92rem;
+            flex: 1 1 120px;
+        }
+
+        .swatch-swatch {
+            height: 1.85rem;
+            border: 1px solid rgba(0, 0, 0, 0.16);
+            margin-bottom: 0.35rem;
+        }
+
+        .asset-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            align-items: flex-start;
+            margin-bottom: 0.8rem;
+        }
+
+        .asset-stack img {
+            width: min(140px, 100%);
+            max-height: 10rem;
+            object-fit: contain;
+            border: 2px solid var(--line);
+            background: var(--paper);
+        }
+
+        .toolkit-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 980px) {
+            .toolkit-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .subpage-board {
+                padding: 1rem;
+            }
+
+            .toolkit-card {
+                padding: 1rem;
+            }
+
+            .slide-nav {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="subpage-board">
+        <article class="toolkit-card">
+            <div class="card-code">GUIDE // 03</div>
+            <h1>EPF Poster &amp; Propaganda Guide</h1>
+            <p class="toolkit-intro">A practical guide for making posters, graphic pieces, and social visuals that feel sharp, direct, and unmistakably EPF.</p>
+            <p class="toolkit-quote"><strong>Make the message legible in one second.</strong> If someone has to work for it, it is not ready.</p>
+            <hr class="toolkit-divider">
+
+            <div class="guide-shell">
+                <div class="slide-counter" id="slideCounter">1 / 6</div>
+
+                <section class="slide is-active">
+                    <h2>Brainstorm ideas quickly without overthinking.</h2>
+                    <p>Start by identifying your core message and the audience you want to reach.</p>
+                    <ul>
+                        <li>All you need is a clear claim: a slogan, a contrast, or a call to action.</li>
+                        <li>Lead with one bold headline.</li>
+                        <li>Use empty space like a weapon.</li>
+                    </ul>
+                </section>
+
+                <section class="slide">
+                    <h2>Build the foundation</h2>
+                    <p>Now that you have your message, you can start building the visual foundation.</p>
+                    <ul>
+                        <li>Keep the layout open so the eye can breathe.</li>
+                        <li>Add a red bar, a bold symbol, or a single visual anchor.</li>
+                        <li>Leave room for one clear action.</li>
+                    </ul>
+                </section>
+
+                <section class="slide">
+                    <h2>Visual system</h2>
+                    <div class="asset-stack">
+                        <img src="pictures/6.jpg" alt="EPF Logo">
+                        <img src="pictures/7.png" alt="EPF Logo on Transparent">
+                    </div>
+                    <div class="swatch-row">
+                        <div class="swatch">
+                            <div class="swatch-swatch" style="background: #ff0052;"></div>
+                            <strong>Red / Pink</strong><br>#ff0052
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-swatch" style="background: #fffffd;"></div>
+                            <strong>White</strong><br>#fffffd
+                        </div>
+                        <div class="swatch">
+                            <div class="swatch-swatch" style="background: #1a1a1a;"></div>
+                            <strong>Dark Grey</strong><br>#1a1a1a
+                        </div>
+                    </div>
+                    <ul style="margin-top: 0.6rem;">
+                        <li>Use white and red for impact and contrast.</li>
+                        <li>Use dark grey for text and grounding.</li>
+                        <li>Keep bold, clean, and uncompromising.</li>
+                    </ul>
+                </section>
+
+                <section class="slide">
+                    <h2>Typography rules</h2>
+                    <ul>
+                        <li>Headlines: Oswald, Bold or ExtraBold.</li>
+                        <li>Body copy: Inter.</li>
+                        <li>Use ALL CAPS for headlines.</li>
+                        <li>Let bold be dominant. Avoid decorative flourishes.</li>
+                    </ul>
+                </section>
+
+                <section class="slide">
+                    <h2>Poster formats</h2>
+                    <h3>1. Statement Poster</h3>
+                    <p>Big bold headline, 3–6 words max, centered, with one red line underneath.</p>
+                    <h3>2. Contrast Poster</h3>
+                    <p>Put two opposing ideas side by side and use the ≠ symbol to sharpen the clash.</p>
+                    <h3>3. Mini-slide Poster</h3>
+                    <p>Use a title plus 2–3 bullets. Think graphic handout, not essay.</p>
+                </section>
+
+                <section class="slide">
+                    <h2>Signature elements</h2>
+                    <ul>
+                        <li>Use a red horizontal bar throughout.</li>
+                        <li>Use ✔ for positive energy and ✖ for critique.</li>
+                        <li>Use ≠ for contrast and ideological tension.</li>
+                    </ul>
+                    <p><strong>Do:</strong> short sentences, strong statements, “we” and “you”. <strong>Don’t:</strong> long explanations, neutral tone, bureaucratic wording.</p>
+                </section>
+
+                <div class="slide-nav">
+                    <button type="button" class="nav-btn" id="prevBtn" aria-label="Previous slide">← PREV</button>
+                    <span class="slide-counter" id="slideCounterFooter">1 / 6</span>
+                    <button type="button" class="nav-btn" id="nextBtn" aria-label="Next slide">NEXT →</button>
+                </div>
+            </div>
+        </article>
+
+        <div class="toolkit-grid">
+            <article class="toolkit-card toolkit-panel">
+                <div>
+                    <div class="card-code">01 / QUICK RULES</div>
+                    <h2>Say it sharply</h2>
+                    <ul class="toolkit-list">
+                        <li>Lead with one bold claim.</li>
+                        <li>Keep the layout open so the eye can breathe.</li>
+                        <li>Use the red bar as a visual anchor.</li>
+                    </ul>
+                </div>
+                <a class="toolkit-btn" href="home-grid.html">Return to terminal</a>
+            </article>
+
+            <article class="toolkit-card toolkit-panel">
+                <div>
+                    <div class="card-code">02 / VISUAL KIT</div>
+                    <h2>Build with contrast</h2>
+                    <p class="toolkit-intro">Use red, white, and dark grey to keep every poster loud and legible.</p>
+                </div>
+                <button type="button" class="toolkit-btn" onclick="downloadLogos()">Download assets</button>
+            </article>
+
+            <article class="toolkit-card toolkit-panel">
+                <div>
+                    <div class="card-code">03 / KEEP IT CLEAN</div>
+                    <h2>Remove the clutter</h2>
+                    <ul class="toolkit-list">
+                        <li>Prefer short sentences over explanations.</li>
+                        <li>Choose one idea instead of three.</li>
+                        <li>Make the action obvious in one glance.</li>
+                    </ul>
+                </div>
+                <a class="toolkit-btn" href="about.html">Read the charter</a>
+            </article>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script>
+        function downloadLogos() {
+            const link1 = document.createElement('a');
+            link1.href = 'pictures/6.jpg';
+            link1.download = '6.jpg';
+            document.body.appendChild(link1);
+            link1.click();
+            document.body.removeChild(link1);
+
+            setTimeout(() => {
+                const link2 = document.createElement('a');
+                link2.href = 'pictures/7.png';
+                link2.download = '7.png';
+                document.body.appendChild(link2);
+                link2.click();
+                document.body.removeChild(link2);
+            }, 200);
+        }
+
+        const slides = Array.from(document.querySelectorAll('.slide'));
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideCounter = document.getElementById('slideCounter');
+        const slideCounterFooter = document.getElementById('slideCounterFooter');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length;
+            slides.forEach((slide, i) => slide.classList.toggle('is-active', i === currentSlide));
+            const label = `${currentSlide + 1} / ${slides.length}`;
+            slideCounter.textContent = label;
+            slideCounterFooter.textContent = label;
+            prevBtn.disabled = slides.length <= 1;
+            nextBtn.disabled = slides.length <= 1;
+        }
+
+        prevBtn.addEventListener('click', () => showSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => showSlide(currentSlide + 1));
+
+        function updateGuideShellHeight() {
+            const guideShell = document.querySelector('.guide-shell');
+            if (!guideShell) return;
+
+            let tallest = 0;
+            slides.forEach(slide => {
+                const originalDisplay = slide.style.display;
+                const originalPosition = slide.style.position;
+                const originalVisibility = slide.style.visibility;
+
+                slide.style.display = 'block';
+                slide.style.position = 'absolute';
+                slide.style.visibility = 'hidden';
+                slide.style.width = '100%';
+
+                tallest = Math.max(tallest, slide.offsetHeight);
+
+                slide.style.display = originalDisplay;
+                slide.style.position = originalPosition;
+                slide.style.visibility = originalVisibility;
+            });
+
+            guideShell.style.minHeight = `${tallest + 8}px`;
+        }
+
+        const guideImages = Array.from(document.querySelectorAll('.guide-shell img'));
+        guideImages.forEach(img => {
+            if (!img.complete) {
+                img.addEventListener('load', updateGuideShellHeight);
+                img.addEventListener('error', updateGuideShellHeight);
+            }
+        });
+
+        window.addEventListener('resize', updateGuideShellHeight);
+        window.addEventListener('load', updateGuideShellHeight);
+
+        showSlide(0);
+        updateGuideShellHeight();
+    </script>
+</body>
+</html>
