@@ -85,7 +85,6 @@ main {
 }
 
 /* HERO BOX */
-
 .hero-box {
     width: 100%;
     display: flex;
@@ -93,7 +92,7 @@ main {
     padding: 4rem;
     background: white;
     border: 8px solid #000;
-    box-shadow: 12px 12px 0px #000;
+    box-shadow: 12px 12px 0px 0px #000;
 }
 
 .headline {
