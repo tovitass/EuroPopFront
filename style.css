@@ -117,6 +117,35 @@ main {
     margin-bottom: 1.5rem;
 }
 
+/* DISCORD LINK STUFF */
+
+.discord-text {
+    max-width: 700px;
+    margin-top: 28px;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.discord-button {
+    display: inline-block;
+    padding: 14px 22px;
+    background: var(--primary-red);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    border: 2px solid var(--primary-red);
+    transition: all 0.2s ease;
+}
+
+.discord-button:hover {
+    background: transparent;
+    color: var(--primary-red);
+    transform: translateY(-2px);
+}
+
 /* RESPONSIVE DESIGN */
 
 @media (max-width: 900px) {
@@ -145,5 +174,14 @@ main {
 
     .header-title {
         font-size: 1.6rem;
+    }
+
+    .discord-text {
+        font-size: 0.95rem;
+    }
+
+    .discord-button {
+        padding: 12px 18px;
+        font-size: 0.85rem;
     }
 }
