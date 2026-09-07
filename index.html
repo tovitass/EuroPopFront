@@ -1,54 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@700;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>European Popular Front — Under Construction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <canvas id="halftone" aria-hidden="true"></canvas>
 
-    <header>
-        <div class="header-main">
-            <div class="nav-logo" style="background: var(--primary-red);"></div>
-            <div class="header-inner">
-                <div class="header-title">European Popular Front</div>
-            </div>
+  <header>
+    <div class="header-main">
+      <div class="nav-logo" aria-hidden="true"></div>
+      <div class="header-inner">
+        <div class="header-title">European Popular Front</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="bento-container">
+      <section class="hero-box">
+        <div>
+          <div class="label">Status // 2026</div>
+          <h1 class="headline">
+            This site is <span class="hero-pink">under construction.</span>
+          </h1>
+          <p class="discord-text">
+            We're building. In the meantime, come join the conversation on Discord:
+          </p>
+          <a
+            href="https://discord.gg/hbZr3TMC8J"
+            class="discord-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join the discussion on Discord →
+          </a>
         </div>
-    </header>
+      </section>
+    </div>
+  </main>
 
-    <main>
-        <div class="bento-container" style="display: block;">
-            
-             <section class="hero-box">                
-                 <div>
-                    <div class="label">Status // 2026</div>
-                    <h1 class="headline">
-                        Something massive is <span class="hero-pink">under construction.</span>
-                    </h1>
+  <script>
+    (function () {
+      var canvas = document.getElementById('halftone');
+      var ctx = canvas.getContext('2d');
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-                    <p class="discord-text">
-                        The EPF is the movement for European leftists who see a future in continental cooperation.
-                        Join the discussion here:
-                    </p>
+      var DPR = Math.min(window.devicePixelRatio || 1, 2);
+      var GAP = 30;
+      var BASE_R = 1.6;
+      var MAX_R = 7;
+      var RADIUS = 190;
 
-                    <a
-                        href="https://discord.gg/hbZr3TMC8J"
-                        class="discord-button"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Join the Discussion on Discord →
-                    </a>
-                </div>
-            </section>
+      var w, h, cols, rows;
+      var mouse = { x: -9999, y: -9999 };
+      var target = { x: -9999, y: -9999 };
 
-        </div>
-    </main>
+      function resize() {
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w * DPR;
+        canvas.height = h * DPR;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+        cols = Math.ceil(w / GAP) + 1;
+        rows = Math.ceil(h / GAP) + 1;
+      }
 
+      function draw() {
+        ctx.clearRect(0, 0, w, h);
+
+        // gentle drift so the cursor position feels alive, not snapped
+        mouse.x += (target.x - mouse.x) * 0.18;
+        mouse.y += (target.y - mouse.y) * 0.18;
+
+        for (var i = 0; i < cols; i++) {
+          for (var j = 0; j < rows; j++) {
+            var x = i * GAP;
+            var y = j * GAP;
+            var dx = x - mouse.x;
+            var dy = y - mouse.y;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            var t = Math.max(0, 1 - dist / RADIUS);
+
+            var r = BASE_R + (MAX_R - BASE_R) * t;
+            var isRed = t > 0.02;
+
+            ctx.beginPath();
+            ctx.arc(x, y, r, 0, Math.PI * 2);
+            if (isRed) {
+              ctx.fillStyle = 'rgba(255, 0, 82, ' + (0.25 + 0.75 * t) + ')';
+            } else {
+              ctx.fillStyle = 'rgba(26, 26, 26, 0.12)';
+            }
+            ctx.fill();
+          }
+        }
+
+        if (!reduceMotion) requestAnimationFrame(draw);
+      }
+
+      function onPointerMove(e) {
+        var p = e.touches ? e.touches[0] : e;
+        target.x = p.clientX;
+        target.y = p.clientY;
+      }
+
+      window.addEventListener('resize', resize);
+      window.addEventListener('mousemove', onPointerMove, { passive: true });
+      window.addEventListener('touchmove', onPointerMove, { passive: true });
+      window.addEventListener('mouseleave', function () {
+        target.x = -9999;
+        target.y = -9999;
+      });
+
+      resize();
+
+      if (reduceMotion) {
+        draw(); // draw a single static grid, no cursor reactivity, no loop
+      } else {
+        requestAnimationFrame(draw);
+      }
+    })();
+  </script>
 </body>
 </html>
