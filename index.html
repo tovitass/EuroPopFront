@@ -7,7 +7,227 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;700&family=Oswald:wght@700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<style>
+:root {
+    --primary-red: #ff0052;
+    --bg-white: #fffffd;
+    --text-grey: #1a1a1a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-white);
+    color: var(--text-grey);
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#halftone {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* TYPOGRAPHY */
+
+h1,
+h2,
+h3,
+.headline {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.05em;
+}
+
+/* HEADER */
+
+header {
+    position: relative;
+    z-index: 1;
+    background: #000;
+    color: white;
+    border-bottom: 8px solid var(--primary-red);
+    padding: 1rem 3rem;
+    flex-shrink: 0;
+}
+
+.header-main {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+}
+
+.nav-logo {
+    width: 45px;
+    height: 45px;
+    border: 3px solid white;
+    background: var(--primary-red);
+    flex-shrink: 0;
+}
+
+/* MAIN CONTENT HOLDER */
+
+main {
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.bento-container {
+    height: 100%;
+    padding: 2rem 3rem 3rem 3rem;
+    display: flex;
+    align-items: center;
+}
+
+/* HERO BOX */
+.hero-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 4rem;
+    background: white;
+    border: 8px solid #000;
+    box-shadow: 12px 12px 0px 0px #000;
+}
+
+.headline {
+    font-size: clamp(3rem, 5vw, 6rem);
+    line-height: 0.9;
+    margin-bottom: 1rem;
+}
+
+.hero-pink {
+    color: var(--primary-red);
+}
+
+/* ELEMENTS */
+
+.label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 1.5rem;
+}
+
+.label::before {
+    content: "● ";
+    color: var(--primary-red);
+}
+
+/* DISCORD LINK STUFF */
+
+.discord-text {
+    max-width: 700px;
+    margin-top: 28px;
+    margin-bottom: 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.discord-button {
+    display: inline-block;
+    padding: 14px 22px;
+    background: var(--primary-red);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    border: 2px solid var(--primary-red);
+    transition: all 0.2s ease;
+}
+
+.discord-button:hover {
+    background: transparent;
+    color: var(--primary-red);
+    transform: translateY(-2px);
+}
+
+.discord-button:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 900px) {
+    body {
+        overflow-y: auto;
+        height: auto;
+    }
+
+    .bento-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .hero-box {
+        padding: 2rem;
+        min-height: 40vh;
+        box-shadow: 8px 8px 0px 0px #000;
+    }
+
+    .headline {
+        font-size: 2.5rem;
+    }
+
+    .header-main {
+        gap: 1rem;
+    }
+
+    .header-title {
+        font-size: 1.6rem;
+    }
+
+    .discord-text {
+        font-size: 0.95rem;
+    }
+
+    .discord-button {
+        padding: 12px 18px;
+        font-size: 0.85rem;
+    }
+}
+
+/* MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    .discord-button {
+        transition: none;
+    }
+}
+</style>
 </head>
 <body>
   <canvas id="halftone" aria-hidden="true"></canvas>
