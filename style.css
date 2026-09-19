@@ -203,10 +203,29 @@ body {
     overflow-wrap: normal;
     word-break: keep-all;
     display: inline-block;
-    max-width: 100%;
+    width: 100%;
+    animation: hero-shrink 2s ease-in forwards;
 }
 .hero-title span { color: var(--red); }
-.hero-emblem { width: clamp(6rem, 10vw, 12rem); border: var(--border) solid var(--line); box-shadow: 8px 8px 0 var(--shadow-color); }
+
+@keyframes hero-shrink {
+  0% {
+    font-size: clamp(2rem, 7vw, 5rem);
+  }
+  100% {
+    font-size: clamp(2rem, 4vw, 4rem);
+  }
+}
+.hero-emblem { width: clamp(6rem, 10vw, 12rem); border: var(--border) solid var(--line); box-shadow: 8px 8px 0 var(--shadow-color); animation: emblem-shrink 2s ease-in forwards; }
+
+@keyframes emblem-shrink {
+  0% {
+    width: clamp(6rem, 10vw, 12rem);
+  }
+  100% {
+    width: clamp(3rem, 6vw, 6rem)
+  }
+}
 
 /* Iframes: because apparently one webpage inside another webpage is legal. */
 .portal-frame {
