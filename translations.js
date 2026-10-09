@@ -14,6 +14,24 @@ const EPF_ORGANIZATION_LABELS = {
     ee: { fullName: "Euroopa Rahvarinne", shortName: "EPF", logoAlt: "EPF Logo" }
 };
 
+// Toolkit copy is kept alongside the portal language table so embedded pages
+// receive the same language selection as the main site.
+const EPF_TOOLKIT_TRANSLATIONS = {
+    en: { tkGuideLabel: "EPF // VISUAL GUIDE", tkTitle: "EPF Visual Identity", tkIntro: "A practical reference for the colours, type, symbols, and poster styles that make EPF materials feel like they belong together.", tkTagline: "<strong>Clear, consistent, recognisably EPF.</strong> Use these building blocks across posters, social graphics, and presentations.", tkSlide1: "A shared visual language", tkSlide2: "EPF colour palette", tkSlide3: "EPF type", tkSlide4: "EPF symbols", tkSlide5: "Poster examples", tkDownload: "Download", tkPrev: "← PREV", tkNext: "NEXT →", tkSlide2Desc: "Use the exact hex values to keep colours consistent between design tools and screens.", tkSlide3Desc: "These three fonts are already used across the site. Keep their roles consistent when making new material.", tkSlide4Desc: "These are the official EPF flags and marks. Download the version that fits your design and use the original file so its colour and shape stay crisp.", tkSlide5Desc: "These community posters show how EPF colours, symbols, and messages can work together across different formats. Use them as inspiration, or share the designs as they are: print them as posters or stickers, post them on social media, or display them at meetings and events!" },
+    de: { tkGuideLabel: "EVF // VISUELLER LEITFADEN", tkTitle: "Visuelle Identität der EVF", tkIntro: "Ein praktischer Leitfaden zu Farben, Schrift, Symbolen und Plakatstilen, die EVF-Materialien als zusammengehörig erkennbar machen.", tkTagline: "<strong>Klar, einheitlich, unverkennbar EVF.</strong> Nutze diese Grundlagen für Plakate, Grafiken und Präsentationen.", tkSlide1: "Eine gemeinsame Bildsprache", tkSlide2: "Farbpalette der EVF", tkSlide3: "Schriftarten der EVF", tkSlide4: "Symbole der EVF", tkSlide5: "Plakatbeispiele", tkDownload: "Herunterladen", tkPrev: "← ZURÜCK", tkNext: "WEITER →", tkSlide2Desc: "Nutze die genauen Hex-Werte, damit Farben in Designprogrammen und auf Bildschirmen gleich aussehen.", tkSlide3Desc: "Diese drei Schriftarten werden bereits auf der Website verwendet. Verwende sie auch in neuen Materialien mit denselben Aufgaben.", tkSlide4Desc: "Dies sind die offiziellen Flaggen und Zeichen der EVF. Lade die passende Version herunter und nutze die Originaldatei, damit Farbe und Form erhalten bleiben.", tkSlide5Desc: "Diese Plakate zeigen, wie Farben, Symbole und Botschaften der EVF in verschiedenen Formaten zusammenwirken. Lass dich inspirieren oder teile die Motive: Drucke sie als Plakate oder Sticker, poste sie in sozialen Medien oder zeige sie bei Treffen und Veranstaltungen!" },
+    es: { tkGuideLabel: "FPE // GUÍA VISUAL", tkTitle: "Identidad visual del FPE", tkIntro: "Una guía práctica sobre los colores, la tipografía, los símbolos y los estilos de cartel que dan unidad a los materiales del FPE.", tkTagline: "<strong>Claridad, coherencia e identidad FPE.</strong> Usa estos elementos en carteles, gráficos y presentaciones.", tkSlide1: "Un lenguaje visual compartido", tkSlide2: "Paleta de colores del FPE", tkSlide3: "Tipografía del FPE", tkSlide4: "Símbolos del FPE", tkSlide5: "Ejemplos de carteles", tkDownload: "Descargar", tkPrev: "← ANTERIOR", tkNext: "SIGUIENTE →", tkSlide2Desc: "Usa los valores hexadecimales exactos para mantener los colores coherentes entre herramientas y pantallas.", tkSlide3Desc: "Estas tres tipografías ya se usan en el sitio. Mantén sus funciones al crear nuevos materiales.", tkSlide4Desc: "Estas son las banderas y marcas oficiales del FPE. Descarga la versión adecuada y usa el archivo original para conservar su color y forma.", tkSlide5Desc: "Estos carteles comunitarios muestran cómo combinar los colores, símbolos y mensajes del FPE en distintos formatos. Úsalos como inspiración o compártelos: imprímelos como carteles o pegatinas, publícalos en redes o muéstralos en reuniones y eventos." },
+    fr: { tkGuideLabel: "FPE // GUIDE VISUEL", tkTitle: "Identité visuelle du FPE", tkIntro: "Un guide pratique des couleurs, des polices, des symboles et des styles d’affiche qui donnent une unité aux supports du FPE.", tkTagline: "<strong>Clair, cohérent, reconnaissable.</strong> Utilisez ces éléments pour vos affiches, visuels et présentations.", tkSlide1: "Un langage visuel commun", tkSlide2: "Palette de couleurs du FPE", tkSlide3: "Typographie du FPE", tkSlide4: "Symboles du FPE", tkSlide5: "Exemples d’affiches", tkDownload: "Télécharger", tkPrev: "← PRÉCÉDENT", tkNext: "SUIVANT →", tkSlide2Desc: "Utilisez les valeurs hexadécimales exactes pour assurer la cohérence des couleurs entre outils et écrans.", tkSlide3Desc: "Ces trois polices sont déjà utilisées sur le site. Gardez leurs rôles pour vos nouveaux supports.", tkSlide4Desc: "Voici les drapeaux et emblèmes officiels du FPE. Téléchargez la version adaptée et utilisez le fichier original pour préserver les couleurs et les formes.", tkSlide5Desc: "Ces affiches montrent comment associer les couleurs, symboles et messages du FPE dans différents formats. Inspirez-vous-en ou partagez-les : imprimez-les en affiches ou autocollants, publiez-les sur les réseaux sociaux ou présentez-les lors de réunions et d’événements." },
+    it: { tkGuideLabel: "FPE // GUIDA VISIVA", tkTitle: "Identità visiva dell’FPE", tkIntro: "Una guida pratica a colori, caratteri, simboli e stili di poster che rendono riconoscibili i materiali dell’FPE.", tkTagline: "<strong>Chiaro, coerente, riconoscibilmente FPE.</strong> Usa questi elementi per poster, grafiche e presentazioni.", tkSlide1: "Un linguaggio visivo condiviso", tkSlide2: "Palette colori dell’FPE", tkSlide3: "Tipografia dell’FPE", tkSlide4: "Simboli dell’FPE", tkSlide5: "Esempi di poster", tkDownload: "Scarica", tkPrev: "← PRECEDENTE", tkNext: "AVANTI →", tkSlide2Desc: "Usa i valori esadecimali esatti per mantenere coerenti i colori tra strumenti di design e schermi.", tkSlide3Desc: "Questi tre caratteri sono già usati nel sito. Mantieni i loro ruoli nei nuovi materiali.", tkSlide4Desc: "Queste sono le bandiere e i simboli ufficiali dell’FPE. Scarica la versione adatta e usa il file originale per preservarne colori e forma.", tkSlide5Desc: "Questi poster mostrano come colori, simboli e messaggi dell’FPE possano funzionare insieme in diversi formati. Usali come ispirazione o condividili: stampali come poster o adesivi, pubblicali sui social o mostrali a riunioni ed eventi." },
+    pl: { tkGuideLabel: "EFL // PRZEWODNIK WIZUALNY", tkTitle: "Identyfikacja wizualna EFL", tkIntro: "Praktyczny przewodnik po kolorach, krojach pisma, symbolach i stylach plakatów, które tworzą spójne materiały EFL.", tkTagline: "<strong>Jasno, spójnie, rozpoznawalnie.</strong> Wykorzystuj te elementy na plakatach, grafikach i prezentacjach.", tkSlide1: "Wspólny język wizualny", tkSlide2: "Paleta kolorów EFL", tkSlide3: "Typografia EFL", tkSlide4: "Symbole EFL", tkSlide5: "Przykłady plakatów", tkDownload: "Pobierz", tkPrev: "← POPRZEDNIA", tkNext: "NASTĘPNA →", tkSlide2Desc: "Używaj dokładnych wartości HEX, aby zachować spójne kolory w programach graficznych i na ekranach.", tkSlide3Desc: "Te trzy kroje pisma są już używane na stronie. Zachowaj ich role w nowych materiałach.", tkSlide4Desc: "To oficjalne flagi i symbole EFL. Pobierz odpowiednią wersję i używaj oryginalnego pliku, by zachować kolory i kształty.", tkSlide5Desc: "Te plakaty pokazują, jak łączyć kolory, symbole i przekaz EFL w różnych formatach. Wykorzystaj je jako inspirację lub udostępnij: drukuj jako plakaty lub naklejki, publikuj w mediach społecznościowych albo pokazuj na spotkaniach i wydarzeniach." },
+    ru: { tkGuideLabel: "ЕНФ // ВИЗУАЛЬНОЕ РУКОВОДСТВО", tkTitle: "Визуальный стиль ЕНФ", tkIntro: "Практическое руководство по цветам, шрифтам, символам и стилям плакатов, объединяющим материалы ЕНФ.", tkTagline: "<strong>Ясно, последовательно, узнаваемо.</strong> Используйте эти элементы в плакатах, графике и презентациях.", tkSlide1: "Общий визуальный язык", tkSlide2: "Цветовая палитра ЕНФ", tkSlide3: "Шрифты ЕНФ", tkSlide4: "Символы ЕНФ", tkSlide5: "Примеры плакатов", tkDownload: "Скачать", tkPrev: "← НАЗАД", tkNext: "ДАЛЕЕ →", tkSlide2Desc: "Используйте точные HEX-коды, чтобы цвета совпадали в графических редакторах и на экранах.", tkSlide3Desc: "Эти три шрифта уже используются на сайте. Сохраняйте их назначение в новых материалах.", tkSlide4Desc: "Это официальные флаги и символы ЕНФ. Скачайте подходящую версию и используйте оригинал, чтобы сохранить цвет и форму.", tkSlide5Desc: "Эти плакаты показывают, как сочетать цвета, символы и идеи ЕНФ в разных форматах. Используйте их как пример или делитесь ими: печатайте как плакаты и наклейки, публикуйте в соцсетях или показывайте на встречах и мероприятиях." },
+    uk: { tkGuideLabel: "ЄНФ // ВІЗУАЛЬНИЙ ПОСІБНИК", tkTitle: "Візуальна айдентика ЄНФ", tkIntro: "Практичний посібник із кольорів, шрифтів, символів і стилів плакатів, що об’єднують матеріали ЄНФ.", tkTagline: "<strong>Чітко, послідовно, впізнавано.</strong> Використовуйте ці елементи в плакатах, графіці та презентаціях.", tkSlide1: "Спільна візуальна мова", tkSlide2: "Палітра кольорів ЄНФ", tkSlide3: "Шрифти ЄНФ", tkSlide4: "Символи ЄНФ", tkSlide5: "Приклади плакатів", tkDownload: "Завантажити", tkPrev: "← НАЗАД", tkNext: "ДАЛІ →", tkSlide2Desc: "Використовуйте точні HEX-коди, щоб кольори були однаковими в редакторах і на екранах.", tkSlide3Desc: "Ці три шрифти вже використовуються на сайті. Зберігайте їхні ролі в нових матеріалах.", tkSlide4Desc: "Це офіційні прапори та символи ЄНФ. Завантажте потрібну версію й використовуйте оригінал, щоб зберегти колір і форму.", tkSlide5Desc: "Ці плакати показують, як поєднувати кольори, символи й повідомлення ЄНФ у різних форматах. Використовуйте їх для натхнення або поширюйте: друкуйте як плакати чи наліпки, публікуйте в соцмережах або показуйте на зустрічах і подіях." },
+    bg: { tkGuideLabel: "ЕНФ // ВИЗУАЛЕН НАРЪЧНИК", tkTitle: "Визуална идентичност на ЕНФ", tkIntro: "Практическо ръководство за цветовете, шрифтовете, символите и стиловете на плакатите, които обединяват материалите на ЕНФ.", tkTagline: "<strong>Ясно, последователно, разпознаваемо.</strong> Използвайте тези елементи в плакати, графики и презентации.", tkSlide1: "Общ визуален език", tkSlide2: "Цветова палитра на ЕНФ", tkSlide3: "Шрифтове на ЕНФ", tkSlide4: "Символи на ЕНФ", tkSlide5: "Примери за плакати", tkDownload: "Изтегляне", tkPrev: "← НАЗАД", tkNext: "НАПРЕД →", tkSlide2Desc: "Използвайте точните HEX стойности за еднакви цветове в дизайнерските програми и на екраните.", tkSlide3Desc: "Тези три шрифта вече се използват в сайта. Запазвайте ролите им в новите материали.", tkSlide4Desc: "Това са официалните знамена и символи на ЕНФ. Изтеглете подходящата версия и използвайте оригиналния файл.", tkSlide5Desc: "Тези плакати показват как цветовете, символите и посланията на ЕНФ работят заедно в различни формати. Използвайте ги за вдъхновение или ги споделяйте: отпечатвайте ги, публикувайте ги в социалните мрежи или ги показвайте на срещи и събития." },
+    pt: { tkGuideLabel: "FPE // GUIA VISUAL", tkTitle: "Identidade visual da FPE", tkIntro: "Um guia prático sobre cores, tipos de letra, símbolos e estilos de cartaz que dão unidade aos materiais da FPE.", tkTagline: "<strong>Clara, coerente e reconhecível.</strong> Usa estes elementos em cartazes, gráficos e apresentações.", tkSlide1: "Uma linguagem visual comum", tkSlide2: "Paleta de cores da FPE", tkSlide3: "Tipografia da FPE", tkSlide4: "Símbolos da FPE", tkSlide5: "Exemplos de cartazes", tkDownload: "Transferir", tkPrev: "← ANTERIOR", tkNext: "SEGUINTE →", tkSlide2Desc: "Usa os valores hexadecimais exatos para manter as cores consistentes entre ferramentas e ecrãs.", tkSlide3Desc: "Estes três tipos de letra já são usados no site. Mantém as suas funções nos novos materiais.", tkSlide4Desc: "Estas são as bandeiras e marcas oficiais da FPE. Transfere a versão adequada e usa o ficheiro original para preservar a cor e a forma.", tkSlide5Desc: "Estes cartazes mostram como as cores, os símbolos e as mensagens da FPE podem funcionar em vários formatos. Usa-os como inspiração ou partilha-os: imprime-os, publica-os nas redes sociais ou mostra-os em reuniões e eventos." },
+    sc: { tkGuideLabel: "EPF // VIZUALNI VODIČ", tkTitle: "Vizualni identitet EPF-a", tkIntro: "Praktični vodič kroz boje, tipografiju, simbole i stilove plakata koji povezuju materijale EPF-a.", tkTagline: "<strong>Jasno, dosljedno, prepoznatljivo.</strong> Koristite ove elemente za plakate, grafike i prezentacije.", tkSlide1: "Zajednički vizualni jezik", tkSlide2: "Paleta boja EPF-a", tkSlide3: "Tipografija EPF-a", tkSlide4: "Simboli EPF-a", tkSlide5: "Primjeri plakata", tkDownload: "Preuzmi", tkPrev: "← PRETHODNO", tkNext: "SLJEDEĆE →", tkSlide2Desc: "Koristite tačne HEX vrijednosti kako bi boje bile ujednačene u dizajnerskim alatima i na ekranima.", tkSlide3Desc: "Ova tri fonta već se koriste na stranici. Zadržite njihove uloge u novim materijalima.", tkSlide4Desc: "Ovo su službene zastave i simboli EPF-a. Preuzmite odgovarajuću verziju i koristite izvornu datoteku kako bi boje i oblik ostali jasni.", tkSlide5Desc: "Ovi plakati pokazuju kako boje, simboli i poruke EPF-a mogu djelovati zajedno u različitim formatima. Iskoristite ih kao inspiraciju ili ih podijelite: ispišite ih, objavite na društvenim mrežama ili pokažite na sastancima i događajima." },
+    nl: { tkGuideLabel: "EVF // VISUELE GIDS", tkTitle: "Visuele identiteit van het EVF", tkIntro: "Een praktische gids voor kleuren, lettertypes, symbolen en posterstijlen die EVF-materiaal herkenbaar samenbrengen.", tkTagline: "<strong>Duidelijk, samenhangend, herkenbaar.</strong> Gebruik deze bouwstenen voor posters, afbeeldingen en presentaties.", tkSlide1: "Een gedeelde beeldtaal", tkSlide2: "Kleurenpalet van het EVF", tkSlide3: "Typografie van het EVF", tkSlide4: "Symbolen van het EVF", tkSlide5: "Voorbeelden van posters", tkDownload: "Downloaden", tkPrev: "← VORIGE", tkNext: "VOLGENDE →", tkSlide2Desc: "Gebruik de exacte hexwaarden om kleuren consistent te houden tussen ontwerpprogramma’s en schermen.", tkSlide3Desc: "Deze drie lettertypes worden al op de website gebruikt. Behoud hun rol in nieuw materiaal.", tkSlide4Desc: "Dit zijn de officiële vlaggen en symbolen van het EVF. Download de juiste versie en gebruik het originele bestand om kleur en vorm scherp te houden.", tkSlide5Desc: "Deze posters laten zien hoe EVF-kleuren, symbolen en boodschappen samenkomen in verschillende formaten. Gebruik ze als inspiratie of deel ze: druk ze af, plaats ze op sociale media of toon ze tijdens bijeenkomsten en evenementen." },
+    ee: { tkGuideLabel: "EPF // VISUAALJUHEND", tkTitle: "EPF-i visuaalne identiteet", tkIntro: "Praktiline juhend värvide, kirjatüüpide, sümbolite ja plakatistiilide kohta, mis seovad EPF-i materjalid ühtseks tervikuks.", tkTagline: "<strong>Selge, sidus ja äratuntav EPF.</strong> Kasuta neid elemente plakatitel, graafikas ja esitlustes.", tkSlide1: "Ühine visuaalne keel", tkSlide2: "EPF-i värvipalett", tkSlide3: "EPF-i kirjatüübid", tkSlide4: "EPF-i sümbolid", tkSlide5: "Plakatite näited", tkDownload: "Laadi alla", tkPrev: "← EELMINE", tkNext: "JÄRGMINE →", tkSlide2Desc: "Kasuta täpseid HEX-väärtusi, et värvid oleksid kujundustarkvaras ja ekraanidel ühtsed.", tkSlide3Desc: "Neid kolme kirjatüüpi kasutatakse juba veebilehel. Hoia nende rollid uues materjalis samad.", tkSlide4Desc: "Need on EPF-i ametlikud lipud ja märgid. Laadi alla sobiv versioon ning kasuta originaalfaili, et säilitada värv ja kuju.", tkSlide5Desc: "Need plakatid näitavad, kuidas EPF-i värvid, sümbolid ja sõnumid eri formaatides koos toimivad. Kasuta neid inspiratsioonina või jaga edasi: prindi plakatiteks või kleepsudeks, postita sotsiaalmeedias või näita kohtumistel ja üritustel." }
+};
+
 function applyOrganizationTokens(value, lang) {
     const activeLang = getLanguage(lang);
     const labels = EPF_ORGANIZATION_LABELS[activeLang] || EPF_ORGANIZATION_LABELS.en;
@@ -73,6 +91,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "EPF | European Popular Front | Official Portal",
         home: "HOME",
         heroTitle: 'UNITED WE <span>BARGAIN.</span> DIVIDED WE <span>BEG.</span>',
+        heroSupportOne: "Working together gives people across Europe a stronger voice.",
+        heroSupportTwo: "Organise across borders. Build a fairer, more united Europe.",
         joinTitle: "JOIN THE FRONT",
         joinCopy: "Organise internationally. Reject nationalism. Build European power.",
         signUp: "SIGN UP",
@@ -139,6 +159,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "EVF | Europäische Volksfront | Offizielles Portal",
         home: "STARTSEITE",
         heroTitle: 'VEREINT <span>HANDELN WIR.</span> GETRENNT <span>BETTELN WIR.</span>',
+        heroSupportOne: "Gemeinsam geben wir den Menschen in Europa eine stärkere Stimme.",
+        heroSupportTwo: "Organisiert euch über Grenzen hinweg. Gestaltet ein gerechteres, geeinteres Europa.",
         joinTitle: "SCHLIESSE DICH DER FRONT AN",
         joinCopy: "Organisiere dich international. Verwirf den Nationalismus. Baue europäische Macht auf.",
         signUp: "TRITT BEI",
@@ -205,6 +227,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "FRENTE POPULAR EUROPEO | Portal Oficial",
         home: "INICIO",
         heroTitle: 'UNIDOS <span>NEGOCIAMOS.</span>  DIVIDIDOS <span> SUPLICAMOS.</span>',
+        heroSupportOne: "Juntas, las personas de Europa tienen una voz más fuerte.",
+        heroSupportTwo: "Organícense más allá de las fronteras. Construyan una Europa más justa y unida.",
         joinTitle: "¡ÚNETE AL FRENTE!",
         joinCopy: "Organízate internacionalmente. Reniega del nacionalismo. Construye el poder europeo.",
         signUp: "ÚNETE",
@@ -271,6 +295,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "FPE | Front Populaire Européen | Portail Officiel",
         home: "Accueil",
         heroTitle: 'ENSEMBLE ON <span>TIENS TÊTE.</span> DIVISE ON <span>SUPPLIE.</span>',
+        heroSupportOne: "Ensemble, les peuples d’Europe font entendre une voix plus forte.",
+        heroSupportTwo: "Organisons-nous au-delà des frontières pour une Europe plus juste et plus unie.",
         joinTitle: "REJOINS LE COMBAT",
         joinCopy: "Organiser l'internationalisme. Rejeter le nationalisme. Batir une puissance Européenne.",
         signUp: "S'ENREGISTRER",
@@ -337,6 +363,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "FPE | Fronte Popolare Europeo | Portale Ufficiale",
         home: "HOME",
         heroTitle: 'UNITI <span>TRATTIAMO.</span> DIVISI <span>ELEMOSINIAMO.</span>',
+        heroSupportOne: "Insieme, le persone in Europa hanno una voce più forte.",
+        heroSupportTwo: "Organizziamoci oltre i confini per un’Europa più giusta e unita.",
         joinTitle: "UNISCITI AL FRONTE",
         joinCopy: "Organizzati a livello internazionale. Rifiuta il nazionalismo. Costruisci potere europeo.",
         signUp: "ISCRIVITI",
@@ -403,6 +431,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "EFL | Europejski Front Ludowy | Oficjalny Portal",
         home: "START",
         heroTitle: 'ZJEDNOCZENI <span>NEGOCJUJEMY.</span> PODZIELENI <span>PROSIMY.</span>',
+        heroSupportOne: "Wspólne działanie daje mieszkańcom Europy silniejszy głos.",
+        heroSupportTwo: "Organizujmy się ponad granicami i budujmy sprawiedliwszą, bardziej zjednoczoną Europę.",
         joinTitle: "DOLACZ DO FRONTU",
         joinCopy: "Organizuj się międzynarodowo. Odrzuć nacjonalizm. Buduj europejską siłę.",
         signUp: "ZAPISZ SIĘ",
@@ -469,6 +499,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "ЕНФ | Европейский Народный Фронт | Официальный портал",
         home: "ГЛАВНАЯ",
         heroTitle: 'ЕДИНЫ МЫ <span>ДИКТУЕМ УСЛОВИЯ.</span> РАЗЪЕДИНЕНЫ МЫ <span>МОЛИМ О ПОЩАДЕ.</span>',
+        heroSupportOne: "Действуя вместе, жители Европы звучат громче.",
+        heroSupportTwo: "Объединяйтесь через границы ради более справедливой и единой Европы.",
         joinTitle: "ПРИСОЕДИНЯЙСЯ",
         joinCopy: "Организуйтесь международно. Отвергайте национализм. Стройте европейскую силу.",
         signUp: "ВСТУПИТЬ",
@@ -535,6 +567,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "ЄНФ | Європейський Народний Фронт | Офіціальний Портал",
         home: "ГОЛОВНА",
         heroTitle: 'З\'ЄДНАНИМИ МИ <span>ДОМОВЛЯЄМОСЯ.</span> РОЗДІЛЕНИМИ — <span>БЛАГАЄМО.</span>',
+        heroSupportOne: "Разом люди Європи мають сильніший голос.",
+        heroSupportTwo: "Об’єднуймося через кордони заради справедливішої та згуртованішої Європи.",
         joinTitle: "ПРИЄДНУЙСЯ ДО ФРОНТУ",
         joinCopy: "Організовуйся міжнародно. Відмовся від націоналізму. Будуй європейську потужність.",
         signUp: "ЗАРЕЄСТРУВАТИСЯ",
@@ -601,6 +635,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "ЕНФ | Европейски Народен Фронт | Официален Портал",
         home: "НАЧАЛНА СТРАНИЦА",
         heroTitle: 'Обединени <span>преговаряме.</span> Разделени <span>се молим.</span>',
+        heroSupportOne: "Заедно хората в Европа имат по-силен глас.",
+        heroSupportTwo: "Организирайте се отвъд границите. Изградете по-справедлива и обединена Европа.",
         joinTitle: "ПРИСЪЕДИНИ СЕ КЪМ ФРОНТА",
         joinCopy: "Организирайте се международно, отвъд националните граници. Постройте европейската сила.",
         signUp: "ПРИСЪЕДИНЕТЕ СЕ",
@@ -667,6 +703,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "FPE | Frente Popular Europeia | Portal Oficial",
         home: "HOME",
         heroTitle: 'JUNTOS <span> NEGOCIAMOS.</span> DIVIDIDOS <span>IMPLORAMOS.</span>',
+        heroSupportOne: "Juntas, as pessoas da Europa têm uma voz mais forte.",
+        heroSupportTwo: "Organizem-se além das fronteiras. Construam uma Europa mais justa e unida.",
         joinTitle: "JUNTA-TE À FRENTE POPULAR",
         joinCopy: "Organiza Internacionalmente. Rejeita nacionalismos. Criar Poder Europeu.",
         signUp: "JUNTA-TE",
@@ -733,6 +771,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "EPF | Europska Popularna Fronta | Službeni Portal",
         home: "HOME",
         heroTitle: 'ZAJEDNO <span>ZAHTJEVAMO.</span> ODVOJENI <span>PREKLINJEMO.</span>',
+        heroSupportOne: "Zajedničkim djelovanjem ljudi Europe imaju snažniji glas.",
+        heroSupportTwo: "Organizirajmo se preko granica i gradimo pravedniju, ujedinjeniju Europu.",
         joinTitle: "PRIDRUŽI SE FRONTI",
         joinCopy: "Organiziraj se internacionalno. Napusti nacionalizam. Gradi Europsku moć.",
         signUp: "PRIDRUŽI SE",
@@ -799,6 +839,8 @@ const EPF_TRANSLATIONS = {
         siteTitle: "Europees Volksfront | Official Portal",
         home: "STARTPAGINA",
         heroTitle: 'VERENIGD <span>ONDERHANDELEN.</span> VERDEELD <span>SMEKEN.</span>',
+        heroSupportOne: "Samen hebben mensen in Europa een sterkere stem.",
+        heroSupportTwo: "Organiseer over grenzen heen. Bouw aan een eerlijker en meer verenigd Europa.",
         joinTitle: "SLUIT JE AAN BIJ HET FRONT",
         joinCopy: "Organiseer internationaal. Verwerp nationalisme. Bouw Europese macht op.",
         signUp: "AANMELDEN",
@@ -866,6 +908,8 @@ ee: {
         siteTitle: "Euroopa Rahvarinne | Ametlik Portaal",
         home: "KODULEHT",
         heroTitle: 'ÜHESKOOS ME <span>TEHIME.</span> JAGATUNA ME <span>ANUME.</span>',
+        heroSupportOne: "Koos on Euroopa inimestel tugevam hääl.",
+        heroSupportTwo: "Organiseeruge üle piiride. Ehitage õiglasem ja ühtsem Euroopa.",
         joinTitle: "LIITU RINNAGA",
         joinCopy: "Organiseeru rahvusvaheliselt. Hülga natsionalism. Ehita üles Euroopa tugevus.",
         signUp: "REGISTREERI",
@@ -924,6 +968,161 @@ ee: {
         joinDiscord: "LIITU DISCORDIGA"
     }   
 };
+
+const EPF_TOOLKIT_SLIDE_COPY = {
+    en: {
+        tkSlide1Body: `<h2>A shared visual language</h2><ul><li>Start with one clear subject and a strong visual hierarchy.</li><li>Use the palette and type choices on the next slides as your foundation.</li><li>Give the EPF mark room to breathe and keep supporting details readable.</li></ul><div class="identity-notes"><section><h3>Repeat the essentials</h3><p>Repeat the accent colour, type choices, and EPF symbol so every piece feels part of one family.</p></section><section><h3>Set a clear hierarchy</h3><p>Make the main heading easiest to notice. Use size, weight, and spacing to guide the reader.</p></section><section><h3>Keep the mark intact</h3><p>Use the supplied artwork in its original proportions, with clear space and enough contrast.</p></section><section><h3>Adapt the layout</h3><p>Adjust the arrangement for each format while keeping the same visual elements.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>EPF pink-red</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Warm white</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Ink</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Black</strong><br>#000000</div></div><ul><li>Use #ff0052 for accents, rules, and emphasis.</li><li>Use warm white for open backgrounds and ink for comfortable reading.</li><li>Keep contrast high, especially for small text.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — headings, titles, and short labels. Use bold weights.</li><li><strong>Inter</strong> — paragraphs, captions, and longer information.</li><li><strong>JetBrains Mono</strong> — codes, small technical labels, and occasional emphasis.</li><li>Use uppercase for short headings; keep longer text in sentence case.</li></ul><div class="font-specimens" aria-label="EPF font samples"><div class="font-specimen oswald"><strong>Oswald / Display</strong><span>BUILD<br>TOGETHER</span></div><div class="font-specimen inter"><strong>Inter / Reading</strong><span>Clear words<br>for everyone.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Label</strong><span>EPF // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Choose the right version</h3><p>Use the full flag when there is room. The standalone mark suits smaller or tighter layouts.</p></section><section><h3>Give it contrast</h3><p>Choose a calm background where the shape is easy to see. Use the transparent mark on solid colours.</p></section><section><h3>Keep its proportions</h3><p>Scale the artwork evenly. Do not stretch, crop, or redraw the flag or flower.</p></section><section><h3>Leave clear space</h3><p>Keep text and other graphics away from the mark so it stays distinct.</p></section>`
+    },
+    de: {
+        tkSlide1Body: `<h2>Eine gemeinsame Bildsprache</h2><ul><li>Wähle ein klares Motiv und eine deutliche visuelle Hierarchie.</li><li>Nutze die Farbpalette und Schriftwahl der nächsten Folien als Grundlage.</li><li>Gib dem EVF-Zeichen Raum und halte Zusatzinformationen lesbar.</li></ul><div class="identity-notes"><section><h3>Das Wesentliche wiederholen</h3><p>Wiederhole Akzentfarbe, Schriftwahl und EVF-Zeichen, damit alle Materialien zusammengehören.</p></section><section><h3>Klare Hierarchie schaffen</h3><p>Die Hauptüberschrift soll zuerst auffallen. Größe, Stärke und Abstände führen durch den Text.</p></section><section><h3>Zeichen unverändert lassen</h3><p>Nutze das Original im richtigen Seitenverhältnis, mit Freiraum und ausreichendem Kontrast.</p></section><section><h3>Layout anpassen</h3><p>Passe die Anordnung an jedes Format an und behalte die visuellen Elemente bei.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>EVF Pinkrot</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Warmweiß</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Schwarzgrau</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Schwarz</strong><br>#000000</div></div><ul><li>Nutze #ff0052 für Akzente, Linien und Hervorhebungen.</li><li>Warmweiß eignet sich für offene Hintergründe, dunkle Schrift für angenehmes Lesen.</li><li>Achte besonders bei kleiner Schrift auf starken Kontrast.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — Überschriften, Titel und kurze Beschriftungen. Nutze fette Schnitte.</li><li><strong>Inter</strong> — Absätze, Bildunterschriften und längere Texte.</li><li><strong>JetBrains Mono</strong> — Codes, technische Kurzlabels und gelegentliche Akzente.</li><li>Kurze Überschriften in Großbuchstaben; längere Texte in Satzschreibung.</li></ul><div class="font-specimens" aria-label="EVF-Schriftmuster"><div class="font-specimen oswald"><strong>Oswald / Anzeige</strong><span>GEMEINSAM<br>STARK</span></div><div class="font-specimen inter"><strong>Inter / Lesetext</strong><span>Klare Worte<br>für alle.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Label</strong><span>EVF // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Die passende Version wählen</h3><p>Nutze die ganze Flagge, wenn genug Platz ist. Das einzelne Zeichen passt besser in kleine oder enge Layouts.</p></section><section><h3>Für Kontrast sorgen</h3><p>Wähle einen ruhigen Hintergrund. Das transparente Zeichen eignet sich für einfarbige Flächen.</p></section><section><h3>Proportionen bewahren</h3><p>Skaliere das Motiv gleichmäßig. Flagge oder Blüte nicht strecken, zuschneiden oder nachzeichnen.</p></section><section><h3>Freiraum lassen</h3><p>Halte Text und andere Grafiken fern, damit das EVF-Zeichen klar erkennbar bleibt.</p></section>`
+    },
+    es: {
+        tkSlide1Body: `<h2>Un lenguaje visual compartido</h2><ul><li>Parte de un tema claro y una jerarquía visual sólida.</li><li>Usa la paleta y las tipografías de las siguientes diapositivas como base.</li><li>Deja espacio para la marca del FPE y mantén legibles los detalles.</li></ul><div class="identity-notes"><section><h3>Repite lo esencial</h3><p>Repite el color de acento, las tipografías y el símbolo para dar unidad a cada pieza.</p></section><section><h3>Define una jerarquía clara</h3><p>Haz que destaque el título principal. Usa tamaño, grosor y espacio para guiar la lectura.</p></section><section><h3>Conserva la marca</h3><p>Usa el diseño original, sin alterar sus proporciones, con espacio y contraste suficientes.</p></section><section><h3>Adapta el diseño</h3><p>Ajusta la composición a cada formato y conserva los mismos elementos visuales.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>Rojo rosado FPE</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Blanco cálido</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Tinta</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Negro</strong><br>#000000</div></div><ul><li>Usa #ff0052 para acentos, líneas y énfasis.</li><li>Usa blanco cálido en fondos y tinta para facilitar la lectura.</li><li>Mantén un contraste alto, sobre todo en textos pequeños.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — títulos y etiquetas breves. Usa pesos gruesos.</li><li><strong>Inter</strong> — párrafos, pies de foto e información extensa.</li><li><strong>JetBrains Mono</strong> — códigos, etiquetas técnicas y algún énfasis.</li><li>Usa mayúsculas en títulos breves y escritura normal en textos largos.</li></ul><div class="font-specimens" aria-label="Muestras tipográficas del FPE"><div class="font-specimen oswald"><strong>Oswald / Títulos</strong><span>UNIDAS<br>AVANZAMOS</span></div><div class="font-specimen inter"><strong>Inter / Lectura</strong><span>Palabras claras<br>para todas.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Etiqueta</strong><span>FPE // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Elige la versión adecuada</h3><p>Usa la bandera completa si hay espacio. La marca sola funciona mejor en diseños pequeños o estrechos.</p></section><section><h3>Asegura el contraste</h3><p>Elige un fondo tranquilo. La marca transparente sirve sobre colores lisos.</p></section><section><h3>Conserva las proporciones</h3><p>Escala la imagen de manera uniforme. No estires, recortes ni redibujes la bandera o el hibisco.</p></section><section><h3>Deja espacio libre</h3><p>Separa el texto y otros gráficos para que la marca se distinga bien.</p></section>`
+    },
+    fr: {
+        tkSlide1Body: `<h2>Un langage visuel commun</h2><ul><li>Choisissez un sujet clair et une hiérarchie visuelle forte.</li><li>Appuyez-vous sur les couleurs et les polices des diapositives suivantes.</li><li>Laissez respirer le symbole du FPE et gardez les détails lisibles.</li></ul><div class="identity-notes"><section><h3>Répéter l’essentiel</h3><p>Répétez la couleur d’accent, les polices et le symbole pour créer une identité commune.</p></section><section><h3>Établir une hiérarchie claire</h3><p>Faites ressortir le titre principal. Utilisez taille, graisse et espacement pour guider la lecture.</p></section><section><h3>Préserver le symbole</h3><p>Utilisez le visuel original, sans modifier ses proportions, avec assez d’espace et de contraste.</p></section><section><h3>Adapter la mise en page</h3><p>Adaptez la composition à chaque format tout en gardant les mêmes éléments visuels.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>Rose-rouge FPE</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Blanc chaud</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Encre</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Noir</strong><br>#000000</div></div><ul><li>Utilisez #ff0052 pour les accents, les lignes et les mises en évidence.</li><li>Choisissez le blanc chaud pour les fonds et l’encre pour faciliter la lecture.</li><li>Gardez un contraste élevé, surtout pour les petits textes.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — titres et courtes étiquettes. Choisissez des graisses fortes.</li><li><strong>Inter</strong> — paragraphes, légendes et textes longs.</li><li><strong>JetBrains Mono</strong> — codes, repères techniques et accents ponctuels.</li><li>Réservez les majuscules aux titres courts et gardez la casse normale pour les textes longs.</li></ul><div class="font-specimens" aria-label="Exemples de polices du FPE"><div class="font-specimen oswald"><strong>Oswald / Titres</strong><span>ENSEMBLE<br>PLUS FORTS</span></div><div class="font-specimen inter"><strong>Inter / Lecture</strong><span>Des mots clairs<br>pour toutes et tous.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Repère</strong><span>FPE // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Choisir la bonne version</h3><p>Utilisez le drapeau complet si vous avez de la place. Le symbole seul convient aux formats réduits.</p></section><section><h3>Assurer le contraste</h3><p>Choisissez un fond sobre. Le symbole transparent convient aux fonds unis.</p></section><section><h3>Respecter les proportions</h3><p>Redimensionnez uniformément. Ne déformez, ne recadrez et ne redessinez pas le drapeau ou la fleur.</p></section><section><h3>Garder un espace libre</h3><p>Éloignez textes et autres graphismes pour préserver la lisibilité du symbole.</p></section>`
+    },
+    it: {
+        tkSlide1Body: `<h2>Un linguaggio visivo condiviso</h2><ul><li>Scegli un soggetto chiaro e una gerarchia visiva forte.</li><li>Usa palette e caratteri delle prossime diapositive come base.</li><li>Lascia spazio al simbolo FPE e mantieni leggibili i dettagli.</li></ul><div class="identity-notes"><section><h3>Ripeti gli elementi essenziali</h3><p>Ripeti colore d’accento, caratteri e simbolo per dare unità a ogni contenuto.</p></section><section><h3>Crea una gerarchia chiara</h3><p>Metti in risalto il titolo principale. Usa dimensione, peso e spaziatura per guidare la lettura.</p></section><section><h3>Non alterare il simbolo</h3><p>Usa l’immagine originale, senza modificarne le proporzioni, con spazio e contrasto adeguati.</p></section><section><h3>Adatta il layout</h3><p>Adatta la composizione a ogni formato mantenendo gli stessi elementi visivi.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>Rosso-rosa FPE</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Bianco caldo</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Inchiostro</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Nero</strong><br>#000000</div></div><ul><li>Usa #ff0052 per accenti, linee e risalto.</li><li>Usa il bianco caldo per gli sfondi e l’inchiostro per leggere comodamente.</li><li>Mantieni un contrasto elevato, soprattutto nei testi piccoli.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — titoli e brevi etichette. Usa pesi marcati.</li><li><strong>Inter</strong> — paragrafi, didascalie e testi lunghi.</li><li><strong>JetBrains Mono</strong> — codici, etichette tecniche e qualche enfasi.</li><li>Usa le maiuscole per titoli brevi; mantieni la normale capitalizzazione nei testi lunghi.</li></ul><div class="font-specimens" aria-label="Esempi di caratteri FPE"><div class="font-specimen oswald"><strong>Oswald / Titoli</strong><span>INSIEME<br>PIÙ FORTI</span></div><div class="font-specimen inter"><strong>Inter / Lettura</strong><span>Parole chiare<br>per tutte e tutti.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Etichetta</strong><span>FPE // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Scegli la versione giusta</h3><p>Usa la bandiera completa se c’è spazio. Il simbolo isolato è adatto ai formati più piccoli.</p></section><section><h3>Garantisci contrasto</h3><p>Scegli uno sfondo semplice. Il simbolo trasparente funziona sui colori uniformi.</p></section><section><h3>Rispetta le proporzioni</h3><p>Ridimensiona in modo uniforme. Non deformare, ritagliare o ridisegnare bandiera o fiore.</p></section><section><h3>Lascia spazio libero</h3><p>Tieni testi e altre grafiche a distanza per far risaltare il simbolo.</p></section>`
+    },
+    pl: {
+        tkSlide1Body: `<h2>Wspólny język wizualny</h2><ul><li>Wybierz jeden czytelny motyw i wyraźną hierarchię wizualną.</li><li>Oprzyj się na palecie i krojach pisma z kolejnych slajdów.</li><li>Zapewnij znakowi EFL przestrzeń, a szczegóły pozostaw czytelne.</li></ul><div class="identity-notes"><section><h3>Powtarzaj to, co ważne</h3><p>Powtarzaj kolor akcentu, kroje pisma i symbol, by materiały tworzyły całość.</p></section><section><h3>Ustal hierarchię</h3><p>Wyróżnij główny nagłówek. Rozmiarem, grubością i odstępami prowadź czytelnika.</p></section><section><h3>Nie zmieniaj znaku</h3><p>Używaj oryginalnej grafiki i proporcji, zostawiając wokół niej miejsce i kontrast.</p></section><section><h3>Dostosuj układ</h3><p>Dopasuj kompozycję do formatu, zachowując te same elementy wizualne.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>Różowo-czerwony EFL</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Ciepła biel</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Tusz</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Czerń</strong><br>#000000</div></div><ul><li>Używaj #ff0052 do akcentów, linii i wyróżnień.</li><li>Ciepła biel sprawdzi się w tle, a tusz ułatwi czytanie.</li><li>Zachowuj wysoki kontrast, zwłaszcza przy małym tekście.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — nagłówki, tytuły i krótkie etykiety. Używaj pogrubień.</li><li><strong>Inter</strong> — akapity, podpisy i dłuższe treści.</li><li><strong>JetBrains Mono</strong> — kody, krótkie etykiety techniczne i akcenty.</li><li>Krótkie nagłówki zapisuj wielkimi literami, dłuższy tekst zwyczajnie.</li></ul><div class="font-specimens" aria-label="Przykładowe kroje EFL"><div class="font-specimen oswald"><strong>Oswald / Nagłówki</strong><span>RAZEM<br>SILNIEJSI</span></div><div class="font-specimen inter"><strong>Inter / Czytanie</strong><span>Jasne słowa<br>dla wszystkich.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Etykieta</strong><span>EFL // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Wybierz właściwą wersję</h3><p>Użyj pełnej flagi, gdy jest miejsce. Sam symbol lepiej sprawdza się w małych formatach.</p></section><section><h3>Zadbaj o kontrast</h3><p>Wybierz spokojne tło. Przezroczysty symbol pasuje do jednolitych kolorów.</p></section><section><h3>Zachowaj proporcje</h3><p>Skaluj równomiernie. Nie rozciągaj, nie przycinaj ani nie przerysowuj flagi czy kwiatu.</p></section><section><h3>Zostaw wolne miejsce</h3><p>Odsuń tekst i inne grafiki, aby symbol pozostał czytelny.</p></section>`
+    },
+    ru: {
+        tkSlide1Body: `<h2>Общий визуальный язык</h2><ul><li>Выберите ясную тему и чёткую визуальную иерархию.</li><li>Возьмите палитру и шрифты со следующих слайдов за основу.</li><li>Оставьте символу ЕНФ свободное место, а детали сделайте читаемыми.</li></ul><div class="identity-notes"><section><h3>Повторяйте главное</h3><p>Повторяйте акцентный цвет, шрифты и символ, чтобы материалы были едиными.</p></section><section><h3>Задайте иерархию</h3><p>Выделите главный заголовок. Размер, насыщенность и интервалы направят чтение.</p></section><section><h3>Не меняйте символ</h3><p>Используйте оригинал с исходными пропорциями, свободным местом и контрастом.</p></section><section><h3>Адаптируйте макет</h3><p>Меняйте композицию под формат, сохраняя общие визуальные элементы.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>Розово-красный ЕНФ</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Тёплый белый</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Чернила</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Чёрный</strong><br>#000000</div></div><ul><li>Используйте #ff0052 для акцентов, линий и выделения.</li><li>Тёплый белый подходит для фона, а тёмный текст удобен для чтения.</li><li>Сохраняйте высокий контраст, особенно в мелком тексте.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — заголовки и короткие подписи. Используйте жирное начертание.</li><li><strong>Inter</strong> — абзацы, подписи и длинные тексты.</li><li><strong>JetBrains Mono</strong> — коды, короткие технические метки и акценты.</li><li>Короткие заголовки пишите прописными, длинный текст — обычным регистром.</li></ul><div class="font-specimens" aria-label="Образцы шрифтов ЕНФ"><div class="font-specimen oswald"><strong>Oswald / Заголовки</strong><span>ВМЕСТЕ<br>СИЛЬНЕЕ</span></div><div class="font-specimen inter"><strong>Inter / Чтение</strong><span>Ясные слова<br>для всех.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Метка</strong><span>ЕНФ // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Выберите подходящий вариант</h3><p>Используйте полный флаг, если есть место. Отдельный знак лучше подходит для малого формата.</p></section><section><h3>Сохраните контраст</h3><p>Выберите спокойный фон. Прозрачный знак подходит для однотонных цветов.</p></section><section><h3>Соблюдайте пропорции</h3><p>Меняйте размер равномерно. Не растягивайте, не обрезайте и не перерисовывайте флаг или цветок.</p></section><section><h3>Оставьте свободное место</h3><p>Отодвиньте текст и графику, чтобы символ оставался заметным.</p></section>`
+    },
+    uk: {
+        tkSlide1Body: `<h2>Спільна візуальна мова</h2><ul><li>Оберіть зрозумілу тему та виразну візуальну ієрархію.</li><li>Візьміть палітру й шрифти з наступних слайдів за основу.</li><li>Залиште символу ЄНФ простір, а допоміжний текст зробіть читабельним.</li></ul><div class="identity-notes"><section><h3>Повторюйте головне</h3><p>Повторюйте акцентний колір, шрифти й символ, щоб матеріали були цілісними.</p></section><section><h3>Визначте ієрархію</h3><p>Виділіть головний заголовок. Розмір, насиченість і відступи допоможуть читанню.</p></section><section><h3>Не змінюйте символ</h3><p>Використовуйте оригінал із правильними пропорціями, простором і контрастом.</p></section><section><h3>Адаптуйте макет</h3><p>Змінюйте композицію для кожного формату, зберігаючи спільні елементи.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>Рожево-червоний ЄНФ</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Теплий білий</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Чорнильний</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Чорний</strong><br>#000000</div></div><ul><li>Використовуйте #ff0052 для акцентів, ліній і виділення.</li><li>Теплий білий пасує для фону, а темний текст зручний для читання.</li><li>Зберігайте високий контраст, особливо для дрібного тексту.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — заголовки й короткі підписи. Використовуйте жирне накреслення.</li><li><strong>Inter</strong> — абзаци, підписи та довші тексти.</li><li><strong>JetBrains Mono</strong> — коди, короткі технічні мітки й акценти.</li><li>Короткі заголовки пишіть великими літерами, довший текст — звичайно.</li></ul><div class="font-specimens" aria-label="Зразки шрифтів ЄНФ"><div class="font-specimen oswald"><strong>Oswald / Заголовки</strong><span>РАЗОМ<br>СИЛЬНІШІ</span></div><div class="font-specimen inter"><strong>Inter / Читання</strong><span>Зрозумілі слова<br>для всіх.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Мітка</strong><span>ЄНФ // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Оберіть потрібну версію</h3><p>Використовуйте повний прапор, якщо є місце. Окремий знак краще пасує малим форматам.</p></section><section><h3>Забезпечте контраст</h3><p>Оберіть спокійне тло. Прозорий знак добре виглядає на суцільному кольорі.</p></section><section><h3>Зберігайте пропорції</h3><p>Масштабуйте рівномірно. Не розтягуйте, не обрізайте й не перемальовуйте прапор або квітку.</p></section><section><h3>Залишайте вільний простір</h3><p>Відсуньте текст та іншу графіку, щоб символ залишався виразним.</p></section>`
+    },
+    bg: {
+        tkSlide1Body: `<h2>Общ визуален език</h2><ul><li>Изберете ясен мотив и силна визуална йерархия.</li><li>Използвайте палитрата и шрифтовете от следващите слайдове за основа.</li><li>Оставете място около символа на ЕНФ и запазете детайлите четливи.</li></ul><div class="identity-notes"><section><h3>Повтаряйте основното</h3><p>Повтаряйте акцентния цвят, шрифтовете и символа за единен вид на материалите.</p></section><section><h3>Подредете йерархията</h3><p>Изведете главното заглавие напред. Размерът, плътността и разстоянията водят читателя.</p></section><section><h3>Запазете символа</h3><p>Използвайте оригиналния знак с правилни пропорции, свободно място и контраст.</p></section><section><h3>Адаптирайте оформлението</h3><p>Променяйте подредбата според формата, като запазвате общите елементи.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>Розово-червено на ЕНФ</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Топло бяло</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Мастилено</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Черно</strong><br>#000000</div></div><ul><li>Използвайте #ff0052 за акценти, линии и подчертаване.</li><li>Топлото бяло е подходящо за фон, а тъмният текст — за четене.</li><li>Поддържайте силен контраст, особено при дребен текст.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — заглавия и кратки етикети. Използвайте удебелен шрифт.</li><li><strong>Inter</strong> — абзаци, надписи и по-дълъг текст.</li><li><strong>JetBrains Mono</strong> — кодове, технически етикети и акценти.</li><li>Кратките заглавия са с главни букви; дългият текст е с обичаен регистър.</li></ul><div class="font-specimens" aria-label="Примери за шрифтове на ЕНФ"><div class="font-specimen oswald"><strong>Oswald / Заглавия</strong><span>ЗАЕДНО<br>ПО-СИЛНИ</span></div><div class="font-specimen inter"><strong>Inter / Четене</strong><span>Ясни думи<br>за всички.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Етикет</strong><span>ЕНФ // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Изберете подходящата версия</h3><p>Използвайте цялото знаме, когато има място. Самостоятелният знак е по-подходящ за малки формати.</p></section><section><h3>Осигурете контраст</h3><p>Изберете спокоен фон. Прозрачният знак е подходящ върху плътни цветове.</p></section><section><h3>Запазете пропорциите</h3><p>Оразмерявайте равномерно. Не разтягайте, изрязвайте или прерисувайте знамето или цветето.</p></section><section><h3>Оставете свободно място</h3><p>Дръжте текста и графиките настрана, за да се откроява символът.</p></section>`
+    },
+    pt: {
+        tkSlide1Body: `<h2>Uma linguagem visual comum</h2><ul><li>Começa com um tema claro e uma hierarquia visual forte.</li><li>Usa a paleta e os tipos de letra dos próximos diapositivos como base.</li><li>Deixa espaço para o símbolo da FPE e mantém os detalhes legíveis.</li></ul><div class="identity-notes"><section><h3>Repete o essencial</h3><p>Repete a cor de destaque, os tipos de letra e o símbolo para dar unidade aos materiais.</p></section><section><h3>Define uma hierarquia clara</h3><p>Destaca o título principal. Usa tamanho, peso e espaçamento para orientar a leitura.</p></section><section><h3>Preserva o símbolo</h3><p>Usa o grafismo original, com as proporções certas, espaço livre e contraste suficiente.</p></section><section><h3>Adapta o esquema</h3><p>Ajusta a composição a cada formato e mantém os mesmos elementos visuais.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>Rosa-vermelho FPE</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Branco quente</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Tinta</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Preto</strong><br>#000000</div></div><ul><li>Usa #ff0052 para destaques, linhas e ênfase.</li><li>Usa branco quente nos fundos e tinta para uma leitura confortável.</li><li>Garante contraste elevado, sobretudo no texto pequeno.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — títulos e etiquetas curtas. Usa pesos fortes.</li><li><strong>Inter</strong> — parágrafos, legendas e informação mais longa.</li><li><strong>JetBrains Mono</strong> — códigos, etiquetas técnicas e ênfase ocasional.</li><li>Usa maiúsculas em títulos curtos; mantém a escrita normal em textos longos.</li></ul><div class="font-specimens" aria-label="Exemplos de tipos de letra da FPE"><div class="font-specimen oswald"><strong>Oswald / Títulos</strong><span>JUNTOS<br>MAIS FORTES</span></div><div class="font-specimen inter"><strong>Inter / Leitura</strong><span>Palavras claras<br>para todos.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Etiqueta</strong><span>FPE // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Escolhe a versão certa</h3><p>Usa a bandeira completa se houver espaço. O símbolo isolado resulta melhor em formatos pequenos.</p></section><section><h3>Garante contraste</h3><p>Escolhe um fundo simples. O símbolo transparente funciona em cores sólidas.</p></section><section><h3>Mantém as proporções</h3><p>Redimensiona uniformemente. Não estiques, recortes ou redesenhes a bandeira ou a flor.</p></section><section><h3>Deixa espaço livre</h3><p>Mantém o texto e outros grafismos afastados para destacar o símbolo.</p></section>`
+    },
+    sc: {
+        tkSlide1Body: `<h2>Zajednički vizualni jezik</h2><ul><li>Odaberite jasan motiv i snažnu vizualnu hijerarhiju.</li><li>Koristite paletu i tipografiju s narednih slajdova kao osnovu.</li><li>Ostavite prostora za simbol EPF-a i zadržite čitljive detalje.</li></ul><div class="identity-notes"><section><h3>Ponavljajte bitno</h3><p>Ponavljajte boju za naglaske, tipografiju i simbol kako bi materijali bili povezani.</p></section><section><h3>Postavite jasnu hijerarhiju</h3><p>Istaknite glavni naslov. Veličinom, debljinom i razmacima usmjerite čitanje.</p></section><section><h3>Sačuvajte simbol</h3><p>Koristite izvorni crtež i omjere, uz dovoljno prostora i kontrasta.</p></section><section><h3>Prilagodite raspored</h3><p>Prilagodite kompoziciju formatu i zadržite iste vizualne elemente.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>Ružičasto-crvena EPF-a</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Topla bijela</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Tinta</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Crna</strong><br>#000000</div></div><ul><li>Koristite #ff0052 za naglaske, linije i isticanje.</li><li>Topla bijela je za pozadinu, a tinta za ugodno čitanje.</li><li>Održavajte visok kontrast, posebno kod sitnog teksta.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — naslovi i kratke oznake. Koristite podebljane rezove.</li><li><strong>Inter</strong> — odlomci, opisi i duže informacije.</li><li><strong>JetBrains Mono</strong> — kodovi, tehničke oznake i povremeni naglasci.</li><li>Kratke naslove pišite velikim slovima, a duži tekst u uobičajenom obliku.</li></ul><div class="font-specimens" aria-label="Primjeri tipografije EPF-a"><div class="font-specimen oswald"><strong>Oswald / Naslovi</strong><span>ZAJEDNO<br>SMO JAČI</span></div><div class="font-specimen inter"><strong>Inter / Čitanje</strong><span>Jasne riječi<br>za sve.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Oznaka</strong><span>EPF // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Odaberite pravu verziju</h3><p>Koristite cijelu zastavu ako ima mjesta. Samostalni simbol bolje pristaje manjim formatima.</p></section><section><h3>Osigurajte kontrast</h3><p>Odaberite mirnu pozadinu. Prozirni simbol dobro radi na punim bojama.</p></section><section><h3>Sačuvajte proporcije</h3><p>Ravnomjerno mijenjajte veličinu. Ne rastežite, izrezujte ni prerađujte zastavu ili cvijet.</p></section><section><h3>Ostavite slobodan prostor</h3><p>Odmaknite tekst i grafiku kako bi simbol ostao prepoznatljiv.</p></section>`
+    },
+    nl: {
+        tkSlide1Body: `<h2>Een gedeelde beeldtaal</h2><ul><li>Begin met één duidelijk onderwerp en een sterke visuele hiërarchie.</li><li>Gebruik het kleurenpalet en de lettertypes van de volgende dia’s als basis.</li><li>Geef het EVF-teken ruimte en houd aanvullende details leesbaar.</li></ul><div class="identity-notes"><section><h3>Herhaal de kern</h3><p>Herhaal accentkleur, lettertypes en EVF-symbool zodat alle uitingen bij elkaar horen.</p></section><section><h3>Breng hiërarchie aan</h3><p>Laat de hoofdkop opvallen. Gebruik grootte, gewicht en ruimte om de lezer te leiden.</p></section><section><h3>Behoud het teken</h3><p>Gebruik het originele ontwerp met de juiste verhoudingen, ruimte en voldoende contrast.</p></section><section><h3>Pas de indeling aan</h3><p>Pas de compositie per formaat aan en behoud dezelfde visuele elementen.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>EVF roze-rood</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Warm wit</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Inkt</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Zwart</strong><br>#000000</div></div><ul><li>Gebruik #ff0052 voor accenten, lijnen en nadruk.</li><li>Gebruik warm wit voor achtergronden en inkt voor prettig leeswerk.</li><li>Houd het contrast hoog, vooral bij kleine tekst.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — koppen, titels en korte labels. Gebruik vetgedrukte stijlen.</li><li><strong>Inter</strong> — alinea’s, bijschriften en langere teksten.</li><li><strong>JetBrains Mono</strong> — codes, technische labels en af en toe nadruk.</li><li>Gebruik hoofdletters voor korte koppen; schrijf langere tekst normaal.</li></ul><div class="font-specimens" aria-label="EVF-lettertypevoorbeelden"><div class="font-specimen oswald"><strong>Oswald / Koppen</strong><span>SAMEN<br>STERKER</span></div><div class="font-specimen inter"><strong>Inter / Leestekst</strong><span>Duidelijke woorden<br>voor iedereen.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Label</strong><span>EVF // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Kies de juiste versie</h3><p>Gebruik de volledige vlag als er ruimte is. Het losse teken past beter in kleine formaten.</p></section><section><h3>Zorg voor contrast</h3><p>Kies een rustige achtergrond. Het transparante teken past op effen kleuren.</p></section><section><h3>Behoud de verhoudingen</h3><p>Schaal gelijkmatig. Rek, snijd of teken de vlag of bloem niet opnieuw.</p></section><section><h3>Laat ruimte vrij</h3><p>Houd tekst en andere afbeeldingen op afstand zodat het symbool herkenbaar blijft.</p></section>`
+    },
+    ee: {
+        tkSlide1Body: `<h2>Ühine visuaalne keel</h2><ul><li>Alusta ühest selgest teemast ja tugevast visuaalsest hierarhiast.</li><li>Kasuta järgmiste slaidide värvipaletti ja kirjatüüpe alusena.</li><li>Jäta EPF-i märgile ruumi ning hoia lisateave loetav.</li></ul><div class="identity-notes"><section><h3>Korda olulist</h3><p>Korda aktsentvärvi, kirjatüüpe ja EPF-i sümbolit, et materjalid moodustaksid terviku.</p></section><section><h3>Loo selge hierarhia</h3><p>Tõsta pealkiri esile. Suurus, paksus ja vahed aitavad lugemist suunata.</p></section><section><h3>Säilita märk muutmata</h3><p>Kasuta originaali õigete proportsioonidega ning jäta sellele ruumi ja kontrasti.</p></section><section><h3>Kohanda paigutust</h3><p>Kohanda kujundust formaadile, säilitades samad visuaalsed elemendid.</p></section></div>`,
+        tkSlide2Body: `<div class="swatch-row"><div class="swatch"><div class="swatch-swatch" style="background:#ff0052"></div><strong>EPF-i roosakaspunane</strong><br>#ff0052</div><div class="swatch"><div class="swatch-swatch" style="background:#fffffd"></div><strong>Soe valge</strong><br>#fffffd</div><div class="swatch"><div class="swatch-swatch" style="background:#171717"></div><strong>Tint</strong><br>#171717</div><div class="swatch"><div class="swatch-swatch" style="background:#000000"></div><strong>Must</strong><br>#000000</div></div><ul><li>Kasuta #ff0052 aktsentide, joonte ja rõhutuste jaoks.</li><li>Soe valge sobib taustaks ja tume tekst mugavaks lugemiseks.</li><li>Hoia kontrast tugev, eriti väikese kirja puhul.</li></ul>`,
+        tkSlide3Body: `<ul><li><strong>Oswald</strong> — pealkirjad ja lühisildid. Kasuta pakse kirju.</li><li><strong>Inter</strong> — lõigud, allkirjad ja pikem teave.</li><li><strong>JetBrains Mono</strong> — koodid, tehnilised sildid ja rõhutused.</li><li>Kasuta lühikestes pealkirjades suurtähti, pikemas tekstis tavakirja.</li></ul><div class="font-specimens" aria-label="EPF-i kirjatüüpide näited"><div class="font-specimen oswald"><strong>Oswald / Pealkiri</strong><span>KOOS<br>TUGEVAMAD</span></div><div class="font-specimen inter"><strong>Inter / Lugemine</strong><span>Selged sõnad<br>kõigile.</span></div><div class="font-specimen mono"><strong>JetBrains Mono / Silt</strong><span>EPF // 2026</span></div></div>`,
+        tkSlide4Body: `<section><h3>Vali sobiv versioon</h3><p>Kasuta tervet lippu, kui ruumi jätkub. Üksik märk sobib paremini väikesesse kujundusse.</p></section><section><h3>Hoia kontrast selge</h3><p>Vali rahulik taust. Läbipaistev märk sobib ühevärvilisele pinnale.</p></section><section><h3>Säilita proportsioonid</h3><p>Muuda suurust ühtlaselt. Ära venita, lõika ega joonista lippu või lille ümber.</p></section><section><h3>Jäta vaba ruumi</h3><p>Hoia tekst ja muu graafika märgist eemal, et see jääks selgelt nähtavaks.</p></section>`
+    }
+};
+
+const EPF_TOOLKIT_SYMBOL_LABELS = {
+    en: "EPF flag · stars|EPF flag · hibiscus|EPF mark · colour|EPF mark · transparent|EPF QR code|EPF flower · white",
+    de: "EVF-Flagge · Sterne|EVF-Flagge · Hibiskus|EVF-Zeichen · Farbe|EVF-Zeichen · transparent|EVF-QR-Code|EVF-Blüte · weiß",
+    es: "Bandera del FPE · estrellas|Bandera del FPE · hibisco|Símbolo del FPE · color|Símbolo del FPE · transparente|Código QR del FPE|Flor del FPE · blanca",
+    fr: "Drapeau du FPE · étoiles|Drapeau du FPE · hibiscus|Emblème du FPE · couleur|Emblème du FPE · transparent|Code QR du FPE|Fleur du FPE · blanche",
+    it: "Bandiera FPE · stelle|Bandiera FPE · ibisco|Simbolo FPE · a colori|Simbolo FPE · trasparente|Codice QR FPE|Fiore FPE · bianco",
+    pl: "Flaga EFL · gwiazdy|Flaga EFL · hibiskus|Znak EFL · kolorowy|Znak EFL · przezroczysty|Kod QR EFL|Kwiat EFL · biały",
+    ru: "Флаг ЕНФ · звёзды|Флаг ЕНФ · гибискус|Знак ЕНФ · цветной|Знак ЕНФ · прозрачный|QR-код ЕНФ|Цветок ЕНФ · белый",
+    uk: "Прапор ЄНФ · зірки|Прапор ЄНФ · гібіскус|Знак ЄНФ · кольоровий|Знак ЄНФ · прозорий|QR-код ЄНФ|Квітка ЄНФ · біла",
+    bg: "Знаме на ЕНФ · звезди|Знаме на ЕНФ · хибискус|Знак на ЕНФ · цветен|Знак на ЕНФ · прозрачен|QR код на ЕНФ|Цвете на ЕНФ · бяло",
+    pt: "Bandeira da FPE · estrelas|Bandeira da FPE · hibisco|Símbolo da FPE · colorido|Símbolo da FPE · transparente|Código QR da FPE|Flor da FPE · branca",
+    sc: "Zastava EPF-a · zvijezde|Zastava EPF-a · hibiskus|Znak EPF-a · u boji|Znak EPF-a · proziran|QR kod EPF-a|Cvijet EPF-a · bijeli",
+    nl: "EVF-vlag · sterren|EVF-vlag · hibiscus|EVF-teken · kleur|EVF-teken · transparant|EVF-QR-code|EVF-bloem · wit",
+    ee: "EPF-i lipp · tähed|EPF-i lipp · hibiskus|EPF-i märk · värviline|EPF-i märk · läbipaistev|EPF-i QR-kood|EPF-i lill · valge"
+};
+
+const EPF_TOOLKIT_ACCESSIBILITY = {
+    en: ["Downloadable EPF symbols", "Previous symbols", "Next symbols", "EPF poster examples", "Previous posters", "Next posters", "Previous slide", "Next slide", "EPF font samples"],
+    de: ["EVF-Symbole zum Herunterladen", "Vorherige Symbole", "Nächste Symbole", "EVF-Plakatbeispiele", "Vorherige Plakate", "Nächste Plakate", "Vorherige Folie", "Nächste Folie", "EVF-Schriftmuster"],
+    es: ["Símbolos del FPE para descargar", "Símbolos anteriores", "Símbolos siguientes", "Ejemplos de carteles del FPE", "Carteles anteriores", "Carteles siguientes", "Diapositiva anterior", "Diapositiva siguiente", "Muestras tipográficas del FPE"],
+    fr: ["Symboles du FPE à télécharger", "Symboles précédents", "Symboles suivants", "Exemples d’affiches du FPE", "Affiches précédentes", "Affiches suivantes", "Diapositive précédente", "Diapositive suivante", "Exemples de polices du FPE"],
+    it: ["Simboli FPE da scaricare", "Simboli precedenti", "Simboli successivi", "Esempi di poster FPE", "Poster precedenti", "Poster successivi", "Diapositiva precedente", "Diapositiva successiva", "Esempi di caratteri FPE"],
+    pl: ["Symbole EFL do pobrania", "Poprzednie symbole", "Następne symbole", "Przykłady plakatów EFL", "Poprzednie plakaty", "Następne plakaty", "Poprzedni slajd", "Następny slajd", "Przykładowe kroje EFL"],
+    ru: ["Символы ЕНФ для скачивания", "Предыдущие символы", "Следующие символы", "Примеры плакатов ЕНФ", "Предыдущие плакаты", "Следующие плакаты", "Предыдущий слайд", "Следующий слайд", "Образцы шрифтов ЕНФ"],
+    uk: ["Символи ЄНФ для завантаження", "Попередні символи", "Наступні символи", "Приклади плакатів ЄНФ", "Попередні плакати", "Наступні плакати", "Попередній слайд", "Наступний слайд", "Зразки шрифтів ЄНФ"],
+    bg: ["Символи на ЕНФ за изтегляне", "Предишни символи", "Следващи символи", "Примери за плакати на ЕНФ", "Предишни плакати", "Следващи плакати", "Предишен слайд", "Следващ слайд", "Примери за шрифтове на ЕНФ"],
+    pt: ["Símbolos da FPE para transferir", "Símbolos anteriores", "Símbolos seguintes", "Exemplos de cartazes da FPE", "Cartazes anteriores", "Cartazes seguintes", "Diapositivo anterior", "Diapositivo seguinte", "Exemplos de tipos de letra da FPE"],
+    sc: ["Simboli EPF-a za preuzimanje", "Prethodni simboli", "Sljedeći simboli", "Primjeri plakata EPF-a", "Prethodni plakati", "Sljedeći plakati", "Prethodni slajd", "Sljedeći slajd", "Primjeri tipografije EPF-a"],
+    nl: ["EVF-symbolen om te downloaden", "Vorige symbolen", "Volgende symbolen", "EVF-postervoorbeelden", "Vorige posters", "Volgende posters", "Vorige dia", "Volgende dia", "EVF-lettertypevoorbeelden"],
+    ee: ["Allalaaditavad EPF-i sümbolid", "Eelmised sümbolid", "Järgmised sümbolid", "EPF-i plakatite näited", "Eelmised plakatid", "Järgmised plakatid", "Eelmine slaid", "Järgmine slaid", "EPF-i kirjatüüpide näited"]
+};
+
+const EPF_TOOLKIT_BUTTON_LABELS = {
+    en: ["MINMAX PROGRAM (ENGLISH ONLY FOR NOW)", "EPF TOOLKIT"],
+    de: ["MINMAX-PROGRAMM (VORERST NUR AUF ENGLISCH)", "EVF-TOOLKIT"],
+    es: ["PROGRAMA MINMAX (POR AHORA SOLO EN INGLÉS)", "KIT DE HERRAMIENTAS DEL FPE"],
+    fr: ["PROGRAMME MINMAX (EN ANGLAIS POUR LE MOMENT)", "BOÎTE À OUTILS DU FPE"],
+    it: ["PROGRAMMA MINMAX (PER ORA SOLO IN INGLESE)", "KIT DI STRUMENTI FPE"],
+    pl: ["PROGRAM MINMAX (NA RAZIE TYLKO PO ANGIELSKU)", "ZESTAW NARZĘDZI EFL"],
+    ru: ["ПРОГРАММА MINMAX (ПОКА ТОЛЬКО НА АНГЛИЙСКОМ)", "ИНСТРУМЕНТАРИЙ ЕНФ"],
+    uk: ["ПРОГРАМА MINMAX (ПОКИ ЩО ЛИШЕ АНГЛІЙСЬКОЮ)", "ІНСТРУМЕНТАРІЙ ЄНФ"],
+    bg: ["ПРОГРАМА MINMAX (ЗАСЕГА САМО НА АНГЛИЙСКИ)", "ИНСТРУМЕНТИ НА ЕНФ"],
+    pt: ["PROGRAMA MINMAX (POR AGORA SÓ EM INGLÊS)", "FERRAMENTAS DA FPE"],
+    sc: ["MINMAX PROGRAM (ZA SADA SAMO NA ENGLESKOM)", "ALATI EPF-A"],
+    nl: ["MINMAX-PROGRAMMA (VOORLOPIG ALLEEN IN HET ENGELS)", "EVF-TOOLKIT"],
+    ee: ["MINMAXI PROGRAMM (PRAEGU AINULT INGLISE KEELES)", "EPF-I TÖÖRIISTAD"]
+};
+
+Object.entries(EPF_TOOLKIT_BUTTON_LABELS).forEach(([lang, [minmaxLabel, toolkitLabel]]) => {
+    EPF_TOOLKIT_TRANSLATIONS[lang].minmaxLabel = minmaxLabel;
+    EPF_TOOLKIT_TRANSLATIONS[lang].toolkitLabel = toolkitLabel;
+});
+
+Object.entries(EPF_TOOLKIT_ACCESSIBILITY).forEach(([lang, values]) => {
+    ["tkSymbolsAria", "tkPrevSymbols", "tkNextSymbols", "tkPostersAria", "tkPrevPosters", "tkNextPosters", "tkPrevSlideAria", "tkNextSlideAria", "tkFontsAria"].forEach((key, index) => {
+        EPF_TOOLKIT_TRANSLATIONS[lang][key] = values[index];
+    });
+});
+
+Object.entries(EPF_TOOLKIT_SYMBOL_LABELS).forEach(([lang, labels]) => {
+    labels.split("|").forEach((label, index) => {
+        EPF_TOOLKIT_TRANSLATIONS[lang][`tkCaption${index + 1}`] = label;
+        EPF_TOOLKIT_TRANSLATIONS[lang][`tkAlt${index + 1}`] = label;
+    });
+});
+
+Object.entries(EPF_TOOLKIT_SLIDE_COPY).forEach(([lang, values]) => {
+    Object.assign(EPF_TOOLKIT_TRANSLATIONS[lang], values);
+});
+
+Object.entries(EPF_TOOLKIT_TRANSLATIONS).forEach(([lang, values]) => {
+    Object.assign(EPF_TRANSLATIONS[lang], values);
+});
 
 const EPF_TENDENCY_KEYS = [
     "tendencyTradeUnionists",
@@ -1076,7 +1275,7 @@ function applyLanguage(lang = getSavedLanguage(), root = document) {
     }
 }
 
-// Makes the hero title the largest possible size while keeping the text exactly two lines.
+// Fits the localized title beside a square emblem whose side matches the title height.
 function fitHeroTitle() {
     const title = document.querySelector(".hero-title");
     if (!title) return;
@@ -1088,16 +1287,22 @@ function fitHeroTitle() {
     title.style.maxWidth = "100%";
 
     const targetLines = 2;
-    const availableWidth = title.parentElement?.clientWidth || title.getBoundingClientRect().width;
-    if (!availableWidth) return;
+    const panel = title.closest(".hero-panel");
+    if (!panel) return;
 
-    let low = 24;
+    let low = 12;
     let high = 120;
     let best = low;
 
     while (low <= high) {
         const mid = Math.floor((low + high) / 2);
         title.style.fontSize = `${mid}px`;
+
+        // Reserve a square as tall as the two-line title before checking its width.
+        const lineHeightGuess = mid * 1.05;
+        panel.style.setProperty("--hero-title-height", `${lineHeightGuess * targetLines}px`);
+        const availableWidth = title.getBoundingClientRect().width;
+        if (!availableWidth) return;
 
         const computed = window.getComputedStyle(title);
         const lineHeightValue = parseFloat(computed.lineHeight);
@@ -1108,7 +1313,7 @@ function fitHeroTitle() {
         const height = title.getBoundingClientRect().height;
         const currentLines = Math.round(height / lineHeight);
 
-        if (currentLines <= targetLines) {
+        if (currentLines <= targetLines && height <= lineHeightGuess * targetLines + 2) {
             best = mid;
             low = mid + 1;
         } else {
@@ -1117,6 +1322,7 @@ function fitHeroTitle() {
     }
 
     title.style.fontSize = `${best}px`;
+    panel.style.setProperty("--hero-title-height", `${title.getBoundingClientRect().height}px`);
 }
 
 // Theme picker. Dark mode wins by vibes if the browser says so.
@@ -1319,3 +1525,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("resize", debounce(fitHeroTitle, 120));
+if (document.fonts?.ready) document.fonts.ready.then(fitHeroTitle);

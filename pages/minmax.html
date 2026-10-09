@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{orgShortName}} Charter | {{orgShortName}} Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Oswald:wght@600;700;800;900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        html,
+        body {
+            background: transparent !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            height: 100%;
+            width: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .subpage-board {
+            background: var(--board-bg);
+            padding: 40px;
+            box-sizing: border-box;
+            min-height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .charter-card {
+            width: 100%;
+            max-width: 1100px;
+            margin: 20px 0;
+            background-color: var(--card-bg);
+            color: var(--card-text);
+            border: var(--border) solid var(--line);
+            box-shadow: 10px 10px 0 var(--shadow-color);
+            padding: calc(var(--pad) * 2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .charter-card h1,
+        .charter-card h2,
+        .charter-card h3,
+        .charter-card h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+
+        .charter-card h1 {
+            font-size: clamp(2.3rem, 6vw, 5rem);
+            margin-bottom: 0.75rem;
+        }
+
+        .charter-card h2 {
+            color: var(--red);
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .charter-card h3 {
+            font-size: 1.25rem;
+            margin: 1.5rem 0 0.6rem;
+        }
+
+        .charter-card h4 {
+            color: var(--red);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin: 2.5rem 0 1rem;
+        }
+
+        .charter-divider {
+            border: none;
+            border-top: 3px solid var(--red);
+            margin: 1.5rem 0 2rem;
+        }
+
+        .charter-text {
+            color: var(--muted-text);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .charter-text p,
+        .charter-text ul {
+            margin-bottom: 1rem;
+        }
+
+        .charter-text ul {
+            padding-left: 1.5rem;
+        }
+
+        .charter-text li {
+            margin-bottom: 0.35rem;
+        }
+
+        .charter-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 700px) {
+            .subpage-board {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="subpage-board">
+        <!-- The charter card. Lots of text, one big bordered box, democracy with CSS padding. -->
+        <article class="charter-card">
+            <div class="card-code">MINMAX // 01</div>
+            <h1>The programme for a Modern Socialist Europe</h1>
+            <hr class="charter-divider">
+
+            <div class="charter-text">
+                <h4>Part I: The Minimum programme</h2>
+                <p>This is our immediate plan for European society. We do not seek to only manage the current crisis, but to permanently empower the working people of Europe. The following are structural reforms to reclaim our democracy and our lives from the dictatorship of capital and bureaucrats.</p>
+
+                <h2>§1 Democratising and Uniting Europe</h2>
+                <p>The current European institutions are designed to shield capital from the will of the people. We demand a complete republican overhaul of the European political structure.</p>
+                <ul>
+                    <li><h3>A sovereign European Parliament</h3><p>We demand the abolition of the unelected European Commission and the secretive European Council. All legislative and executive power must reside in a single directly elected European Parliament based on a recallable delegate system which holds the competency-competency over its constituents.</p></li>
+                    <li><h3>Public Control over Bureaucracy</h3><p>The European Central Bank, Judges of the ECJ and other top European Officials must be directly elected by the accountable and sovereign European Parliament outlined above and be themselves equally recallable and accountable. The high institutions of Europe must always adhere to the public interest and be efficient in performing their duty to the masses.</p></li>
+                    <li><h3>Unity of Action</h3><p>In the current world order dominated by imperialism and expansionist ambitions, chiefly amongst them the hegemony of the US and NATO, a unified power fighting against these destructive forces is strictly necessary. We must unify our armies under democratised military structures, strictly bound to defensive principles and anti-imperialism, modernising our forces for the sole sake of defending the people of Europe.</p></li>
+                </ul>
+                <h2>§2 The Economic Emancipation of Humanity</h2>
+                <p>Human needs must be permanently divorced from the volatility of profits and markets. We will reclaim production as a whole for the public good.</p>
+                <ul>
+                    <li><h3>Housing as a Universal Right</h3><p>We demand a massive pan-European expropriation of corporate landlords, real estate speculators, and predatory hedge funds alongside a massive expansion of public works for social housing. Housing must be transformed into a public utility, designed strictly for human habitation rather than financial speculation.</p></li>
+                    <li><h3>Universal Public Services</h3><p>Public ownership and pan-European coordination of all infrastructure must be a central priority. Energy grids, water systems, roads, railways, public transport, and digital infrastructure should be brought under democratic public control and developed as a unified European network, ensuring reliable and equal access regardless of region, wealth or income. Additionally, we demand a strong public banking sector to guarantee universal access to essential financial services, while fundamental goods and services should be provided according to need rather than ability to pay. Public services must be democratically governed, sustainably developed, and protected from privatisation and the extraction of profit.</p></li>
+                    <li><h3>Large Scale Spending and Development programme</h3><p>Reinvesting in our people is not just a fight against the neoliberal austerity of the current EU; it is a vital necessity of our era and a fundamental duty towards European workers. We must initiate several large-scale public development programmes aimed at industrialising, modernising, and greening European production.</p></li>
+                    <li><h3>Education programmes and Land Redistribution</h3><p>Land and agricultural production should be brought into modern, socially organised systems, replacing exploitative private ownership structures with public collective management. Rural communities should be supported in transitioning towards democratic, productive, and sustainable forms of agriculture.</p></li>
+                    <li><h3>The Reclamation of Industry</h3><p>All industry should be progressively socialised and placed under democratic management through  trade unions and workers’ councils in charge of administrating production. We demand a transition away from the administration of people towards the administration of things and processes. Large scale monopolies shall be socialised first whilst the economy slowly transitions into complete collective ownership, with immediate bans on precarious labour models such as zero hour contracts or the gig economy. Every worker deserves economic security in the form of a permanent contract as a legal baseline in addition to sweeping expansions of safety regulations and a reduction of the work week to 32 hours whilst retaining equal pay.</p></li>
+                    <li><h3>Equity of Wealth</h3><p>We demand uncompromising progressive taxation, heavy inheritance taxes, the complete abolition of inheritance across collateral descendants, heightened taxes on corporate wealth, and the gradual expropriation of large-scale industry, infrastructure, and private landowners. Wealth must be equitably distributed across society rather than hoarded by a workless minority.</p></li>
+                </ul>
+                <h2>§3 The Unification of Europe</h2>
+                <p>A Europe divided into competing nation-states has nothing to give its working class. Operating alone, each individual European country must beg, bow down and comply with the international forces of Capital. Together, organised under a unified democratic and anti-capitalist banner, we can fight for the true liberation of Europe and the World.</p>
+                <h2>§4 A Progressive Cultural Shift</h2>
+                <p>A Europe split by abstract identity markers such as sexuality, race, gender or disability will only divide us in critical moments where cohesion and unity of the working class are necessary.</p>
+                <ul>
+                    <li><h3>Depoliticisation of Identity</h3><p>The full normalisation and depoliticisation of marginalised identities through the codification of explicit, robust legal protections, educational programmes and positive affirmatory action into our constitutional systems.</p></li>
+                    <li><h3>Intolerance to Intolerance</h3><p>In tandem with normalising marginalised identities, all inhumane, unjust, and oppressive treatment of these identities must be actively destroyed. We will dismantle the chauvinist institutions, structural biases, and legacy cultures that promote and protect such beliefs.</p></li>
+                </ul>
+
+                <h4>Part II: The Maximum programme</h2>
+                <p>The minimum programme removes the immediate chains from the working class and exposes the inherent structural limits of the capitalist system. When the capitalist minority attempts to sabotage these democratic reforms, we will lead the transition towards our ultimate horizon. We will unite every worker, European or not, in a shared struggle for the fate of humanity, and we <strong>will</strong> decisively win this battle, for it is victory or barbarism!</p>
+
+                <h2>§1 Towards a Future of Common Prosperity</h2>
+                <p>Human prosperity can no longer coexist with the concept of private property and the monopolisation of industry, technology and land. All will be entitled to enjoy the benefits of our millenia long march of progress, and all will have a say in its future.</p>
+                <h2>§2 Commonwealth for Human and Ecological Need</h2>
+                <p>The anomie and volatility of the market will be replaced by a democratically organised and rationally planned collective economy. Production will no longer be guided by financial gains, corporate margins or the profit motive, but by the conscious fulfillment of human needs and the restoration of our planet’s ecological boundaries.</p>
+                <h2>§3 The Liberation of Humanity</h2>
+                <p>By dismantling the unequal power structures of capitalism, we will build a world completely free of class divisions, exploitation, or systemic oppression, eventually rendering a militarised, bureaucratic, and oppressive state structure obsolete. The world will transform into a borderless, moneyless, stateless, democratic commonwealth where the potential of humanity is at last unbound through the total liberation and emancipation of every single person. The final, ultimate task of every internationalist movement is the liberation of all mankind from the chains of capital. If we can libetrate Europe, we can and will liberate the world. Once more: Workers of Europe, unite!</p>
+            </div>
+
+            <div class="charter-actions">
+                <!-- Exit button, because scrolling this much law deserves a way out. -->
+                <a href="home-grid.html" target="_self" class="paper-btn" data-i18n="returnTerminal">
+                    ← RETURN TO TERMINAL
+                </a>
+            </div>
+        </article>
+    </div>
+
+    <script src="../translations.js"></script>
+</body>
+</html>

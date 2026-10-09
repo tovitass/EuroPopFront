@@ -124,6 +124,20 @@ body {
     min-width: 3.2rem;
 }
 
+.home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.1rem;
+    color: #fff;
+    border: 2px solid #fff;
+    text-decoration: none;
+    transition: background-color 0.16s ease, color 0.16s ease;
+}
+.home-button svg { display: block; width: 1.15rem; height: 1.15rem; }
+.home-button:hover, .home-button:focus-visible { background: var(--red); color: #fff; }
+
 .theme-toggle {
     display: inline-flex;
     align-items: center;
@@ -190,42 +204,29 @@ body {
 
 /* The page shell keeps the slogan and iframe from emotionally merging into one object. */
 .page-shell { display: flex; flex-direction: column; gap: calc(var(--gap) * 0.8); flex: 1; padding: clamp(0.75rem, 1vw, 1rem); overflow: hidden; }
-.hero-panel { display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 1rem; border-bottom: var(--border) solid var(--line); flex-shrink: 0; }
+.hero-panel { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 0 1rem; padding-bottom: 1rem; border-bottom: var(--border) solid var(--line); flex-shrink: 0; }
+.hero-copy { display: contents; }
 .hero-title {
     font-family: 'Oswald', sans-serif;
     font-size: clamp(2rem, 7vw, 5rem);
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 2px;
-    line-height: 1.2;
-    margin-bottom: 15px;
+    line-height: 1.05;
+    margin-bottom: 0;
     white-space: normal;
     overflow-wrap: normal;
     word-break: keep-all;
     display: inline-block;
     width: 100%;
-    animation: hero-shrink 2s ease-in forwards;
+    min-width: 0;
+    grid-column: 1;
+    grid-row: 1;
 }
 .hero-title span { color: var(--red); }
-
-@keyframes hero-shrink {
-  0% {
-    font-size: clamp(2rem, 7vw, 5rem);
-  }
-  100% {
-    font-size: clamp(2rem, 4vw, 4rem);
-  }
-}
-.hero-emblem { width: clamp(6rem, 10vw, 12rem); border: var(--border) solid var(--line); box-shadow: 8px 8px 0 var(--shadow-color); animation: emblem-shrink 2s ease-in forwards; }
-
-@keyframes emblem-shrink {
-  0% {
-    width: clamp(6rem, 10vw, 12rem);
-  }
-  100% {
-    width: clamp(3rem, 6vw, 6rem)
-  }
-}
+.hero-support { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem 1.5rem; padding-top: 0.6rem; border-top: 2px solid var(--red); margin-top: 0.8rem; }
+.hero-support p { max-width: 38rem; color: var(--muted-text); font-size: clamp(0.8rem, 1.25vw, 1.05rem); line-height: 1.4; }
+.hero-emblem { grid-column: 2; grid-row: 1; width: var(--hero-title-height, 8rem); height: var(--hero-title-height, 8rem); box-sizing: border-box; aspect-ratio: 1 / 1; object-fit: cover; border: var(--border) solid var(--line); box-shadow: 8px 8px 0 var(--shadow-color); }
 
 /* Iframes: because apparently one webpage inside another webpage is legal. */
 .portal-frame {
@@ -467,6 +468,12 @@ a.card:hover {
 }
 
 @media (max-width: 1150px) { .bg-decorations { display: none; } }
+
+@media (max-width: 700px) {
+    .hero-support { grid-template-columns: 1fr; gap: 0.35rem; }
+    .hero-support p { font-size: 0.72rem; line-height: 1.25; }
+    .hero-panel { column-gap: 0.6rem; }
+}
 
 /* extra noise to make the stylesheet look less elegant */
 .site-container {

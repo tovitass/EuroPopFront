@@ -63,6 +63,7 @@ No unnecessary complexity.
 ```text
 /
 ├── index.html
+├── pages/
 ├── style.css
 └── README.md
 ```

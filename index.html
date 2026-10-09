@@ -15,7 +15,7 @@
     <div class="site-container">
         <!-- Top bar. It has a logo, buttons, and a strongg desire to stay black. -->
         <header class="site-header">
-            <a href="home-grid.html" target="content-frame" class="brand">
+            <a href="pages/home-grid.html" target="content-frame" class="brand">
                 <img src="https://pbs.twimg.com/profile_images/2041811697007005696/0KXWhOI8_400x400.jpg" alt="{{orgLogoAlt}}" data-i18n-attr="alt:orgLogoAlt">
                 <span data-i18n="orgFullName">{{orgFullName}}</span>
                 <span class="translation-credit" data-translation-credit>Translation by {{orgShortName}}</span>
@@ -32,20 +32,27 @@
                         <div class="language-menu-list"></div>
                     </div>
                 </div>
+                <a class="home-button" href="pages/home-grid.html" target="content-frame" aria-label="Home" title="Home">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.8 12 3l9 7.8M5.5 9.2V21h13V9.2M9.5 21v-7h5v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"/></svg>
+                </a>
             </nav>
         </header>
 
         <!-- Main portal zone. The iframe is where the smaller webpage hides inside the bigger webpage. -->
-        <main class="page-shell" style="display: flex;">
-            <section class="hero-panel" style="display: flex;">
-                <div class="hero-copy" style="display: block;">
+        <main class="page-shell">
+            <section class="hero-panel">
+                <div class="hero-copy">
                     <h1 class="hero-title" data-i18n-html="heroTitle">UNITED WE <span>BARGAIN.</span><br>
                         DIVIDED WE <span>BEG.</span></h1>
+                    <div class="hero-support">
+                        <p data-i18n="heroSupportOne">Working together gives people across Europe a stronger voice.</p>
+                        <p data-i18n="heroSupportTwo">Organise across borders. Build a fairer, more united Europe.</p>
+                    </div>
                 </div>
                 <img src="https://pbs.twimg.com/profile_images/2041811697007005696/0KXWhOI8_400x400.jpg" class="hero-emblem" alt="{{orgLogoAlt}}" data-i18n-attr="alt:orgLogoAlt">
             </section>
 
-            <iframe src="home-grid.html" name="content-frame" class="portal-frame" frameborder="0" allowtransparency="true" data-translatable-frame></iframe>
+            <iframe src="pages/home-grid.html" name="content-frame" class="portal-frame" frameborder="0" allowtransparency="true" data-translatable-frame></iframe>
         </main>
     </div>
 
