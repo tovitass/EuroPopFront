@@ -88,14 +88,17 @@ function distributePosters() {
         width: window.innerWidth,
         height: window.innerHeight
     };
-    var columnCount = Math.max(5, Math.min(12, Math.ceil(viewport.width / 150)));
+    // Keep the poster columns tied to the CSS viewport. A fixed upper limit
+    // leaves most of the page uncovered when the browser is zoomed out.
+    var columnCount = Math.max(5, Math.ceil(viewport.width / 150));
     var gap = -34;
     var baseWidth = Math.max(190, Math.min(340, (viewport.width - gap * (columnCount - 1)) / columnCount));
+    var columnStep = viewport.width / columnCount;
 
     var columns = [];
     for (var i = 0; i < columnCount; i++) {
         columns.push({
-            x: i * (baseWidth + gap) - baseWidth * 0.45 - Math.random() * 80,
+            x: i * columnStep + (columnStep - baseWidth) / 2 - Math.random() * 35,
             y: -260 - Math.random() * 220
         });
     }

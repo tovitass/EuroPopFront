@@ -8,8 +8,6 @@
     let scheduled = false;
 
     function resetFrameContent(doc) {
-        const board = doc?.querySelector(".grid-board");
-        if (board) board.style.zoom = "";
         if (doc?.body) doc.body.style.overflowY = "";
         if (doc?.documentElement) doc.documentElement.style.overflowY = "";
     }
@@ -43,18 +41,8 @@
         const iframeOverflow = Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight) - frame.clientHeight;
         if (iframeOverflow > 24) site.classList.add("is-frame-compact", "is-hero-logo-hidden");
 
-        const board = doc.querySelector(".grid-board");
-        if (board && site.classList.contains("is-frame-compact")) {
-            const bodyStyle = getComputedStyle(doc.body);
-            const bodyPadding = parseFloat(bodyStyle.paddingTop) + parseFloat(bodyStyle.paddingBottom);
-            const availableHeight = Math.max(1, frame.clientHeight - bodyPadding);
-            const zoom = Math.min(1, availableHeight / Math.max(board.scrollHeight, 1));
-            if (zoom < 1) {
-                board.style.zoom = String(zoom);
-                doc.body.style.overflowY = "hidden";
-                doc.documentElement.style.overflowY = "hidden";
-            }
-        }
+        // Leave the embedded page at its normal scale. Scaling its board to
+        // squeeze it into the iframe made all text shrink at a breakpoint.
     }
 
     function scheduleFit() {

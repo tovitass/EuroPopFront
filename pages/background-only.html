@@ -125,11 +125,12 @@
                 width: window.innerWidth,
                 height: window.innerHeight
             };
-            const columnCount = Math.max(5, Math.min(12, Math.ceil(viewport.width / 150)));
+            const columnCount = Math.max(5, Math.ceil(viewport.width / 150));
             const gap = -34;
             const baseWidth = Math.max(190, Math.min(340, (viewport.width - gap * (columnCount - 1)) / columnCount));
+            const columnStep = viewport.width / columnCount;
             const columns = Array.from({ length: columnCount }, (_, columnIndex) => ({
-                x: columnIndex * (baseWidth + gap) - baseWidth * 0.45 - Math.random() * 80,
+                x: columnIndex * columnStep + (columnStep - baseWidth) / 2 - Math.random() * 35,
                 y: -260 - Math.random() * 220
             }));
             const placements = [];
