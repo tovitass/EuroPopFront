@@ -6,6 +6,7 @@
     if (!frame || !site || !hero || !emblem) return;
 
     let scheduled = false;
+    let homeGridLayout = null;
 
     function resetFrameContent(doc) {
         if (doc?.body) doc.body.style.overflowY = "";
@@ -24,25 +25,41 @@
 
         // Reset and measure once, so the compact state never feeds back into its own trigger.
         site.classList.remove("is-frame-compact", "is-hero-logo-hidden");
+        doc.documentElement.classList.remove("is-frame-compact");
         site.style.removeProperty("--frame-fit-emblem-size");
         resetFrameContent(doc);
         window.fitHeroTitle?.();
 
-        const title = hero.querySelector(".hero-title");
-        const titleHeight = title?.getBoundingClientRect().height || 0;
-        const emblemHeight = emblem.getBoundingClientRect().height;
-        const logoNeedsTooMuchRoom = emblemHeight > window.innerHeight * 0.14 ||
-            (titleHeight > 0 && emblemHeight > titleHeight * 1.5);
-        if (logoNeedsTooMuchRoom) {
-            site.classList.add("is-hero-logo-hidden");
-            window.fitHeroTitle?.();
+        const isHomeGrid = /(?:^|\/)home-grid\.html(?:$|[?#])/.test(doc.location.href);
+        if (isHomeGrid || !homeGridLayout) {
+            const title = hero.querySelector(".hero-title");
+            const titleHeight = title?.getBoundingClientRect().height || 0;
+            const emblemHeight = emblem.getBoundingClientRect().height;
+            const logoNeedsTooMuchRoom = emblemHeight > window.innerHeight * 0.14 ||
+                (titleHeight > 0 && emblemHeight > titleHeight * 1.5);
+            let compact = false;
+            let hideLogo = logoNeedsTooMuchRoom;
+
+            if (logoNeedsTooMuchRoom) {
+                site.classList.add("is-hero-logo-hidden");
+                window.fitHeroTitle?.();
+            }
+
+            const iframeOverflow = Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight) - frame.clientHeight;
+            if (iframeOverflow > 24) {
+                compact = true;
+                hideLogo = true;
+            }
+            homeGridLayout = { compact, hideLogo };
         }
 
-        const iframeOverflow = Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight) - frame.clientHeight;
-        if (iframeOverflow > 24) site.classList.add("is-frame-compact", "is-hero-logo-hidden");
-
-        // Leave the embedded page at its normal scale. Scaling its board to
-        // squeeze it into the iframe made all text shrink at a breakpoint.
+        // The home grid sets the hero's vertical budget. Reuse that state for
+        // every iframe page so toolkit content cannot change the hero height.
+        if (homeGridLayout.compact) site.classList.add("is-frame-compact");
+        if (homeGridLayout.hideLogo) site.classList.add("is-hero-logo-hidden");
+        if (homeGridLayout.compact || homeGridLayout.hideLogo) {
+            doc.documentElement.classList.add("is-frame-compact");
+        }
     }
 
     function scheduleFit() {

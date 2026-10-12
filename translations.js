@@ -1291,7 +1291,9 @@ function fitHeroTitle() {
     if (!panel) return;
 
     let low = 12;
-    let high = 120;
+    // Fit the title to the page height as well as its width, leaving room for
+    // the support copy and the page embedded below it.
+    let high = Math.min(120, Math.max(32, window.innerHeight * 0.065));
     let best = low;
 
     while (low <= high) {
